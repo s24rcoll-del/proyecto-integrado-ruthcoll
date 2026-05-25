@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:,">
+  <meta name="author" content="Ruth Coll">
+  <title>Accessibilitat Web — Santa Mònica Centre d'Arts Contemporànies</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/ui.css">
+</head>
+
+<body class="page-legal">
+
+  <!-- NAVEGACIÓ -->
+  <nav>
+    <div class="logo-placeholder">
+      <a href="index.html" aria-label="Santa Mònica — tornar a l'inici">
+        <img class="img-logo" src="media/LOGOTIP_SM_negatiu.png" alt="Santa Mònica">
+      </a>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">INICI</a>
+      <a class="nav-link" href="exp-act.html">EXPOSICIONS I ACTIVITATS</a>
+      <a class="nav-link" href="visita.html">VISITA</a>
+      <a class="nav-link" href="santa-monica.html">EL SANTA MÒNICA</a>
+    </div>
+    <div class="menu-toggle" role="button" aria-expanded="false" aria-label="Obrir menú" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="legal-wrap">
+
+    <!-- CAPÇALERA -->
+    <header class="legal-header">
+      <p class="legal-header-meta">Document legal</p>
+      <h1 class="legal-header-title">Accessibilitat web</h1>
+      <p class="legal-header-date">Darrera revisió: maig 2026</p>
+    </header>
+
+    <!-- COS -->
+    <main class="legal-body">
+
+      <!-- Índex -->
+      <div class="legal-toc" aria-label="Índex del document">
+        <p class="legal-toc-title">Contingut</p>
+        <ol>
+          <li><a href="#compromis">Compromís amb l'accessibilitat</a></li>
+          <li><a href="#conformitat">Estat de conformitat</a></li>
+          <li><a href="#mesures">Mesures adoptades</a></li>
+          <li><a href="#limitacions">Limitacions conegudes</a></li>
+          <li><a href="#alternatives">Alternatives accessibles</a></li>
+          <li><a href="#contacte">Contacte i comentaris</a></li>
+          <li><a href="#procediment">Procediment de reclamació</a></li>
+        </ol>
+      </div>
+
+      <!-- 01 -->
+      <section class="legal-section" id="compromis">
+        <span class="legal-section-num">01</span>
+        <h2 class="legal-section-title">Compromís amb l'accessibilitat</h2>
+        <p>El Centre d'Arts Santa Mònica es compromet a garantir l'accessibilitat del seu lloc web de conformitat amb la Directiva (UE) 2016/2102 del Parlament Europeu i del Consell, el Reial decret 1112/2018, d'1 de setembre, sobre accessibilitat dels llocs web i aplicacions per a dispositius mòbils del sector públic, i les Pautes d'Accessibilitat per al Contingut Web (WCAG) 2.1.</p>
+        <p>La present declaració d'accessibilitat s'aplica al domini santamonica.cat i tots els seus subdominis. Treballem de manera continuada per identificar i eliminar les barreres d'accessibilitat del Lloc web, i per oferir una experiència de navegació adequada per a totes les persones, independentment de les seves capacitats o del dispositiu que utilitzin.</p>
+      </section>
+
+      <hr class="legal-divider">
+
+      <!-- 02 -->
+      <section class="legal-section" id="conformitat">
+        <span class="legal-section-num">02</span>
+        <h2 class="legal-section-title">Estat de conformitat</h2>
+        <p>Aquest lloc web és <strong>parcialment conforme</strong> amb el Reial decret 1112/2018 i les pautes WCAG 2.1 de nivell AA, a causa de les excepcions i incompliments puntuals que s'enumeren a l'apartat de limitacions conegudes.</p>
+        <div class="legal-note">
+          <strong>Nivell de referència:</strong> Pautes d'Accessibilitat per al Contingut Web (WCAG) 2.1, nivell de conformitat AA. Les pautes WCAG expliquen com fer que el contingut web sigui més accessible a les persones amb discapacitat.
+        </div>
+      </section>
+
+      <hr class="legal-divider">
+
+      <!-- 03 -->
+      <section class="legal-section" id="mesures">
+        <span class="legal-section-num">03</span>
+        <h2 class="legal-section-title">Mesures adoptades</h2>
+        <p>Per afavorir l'accessibilitat del Lloc web, el Centre ha adoptat les mesures tècniques i organitzatives següents:</p>
+        <ul>
+          <li>Estructura semàntica HTML5 correcta en totes les pàgines (encapçalaments, landmarks, llistes).</li>
+          <li>Atributs <code>alt</code> descriptius en totes les imatges amb contingut informatiu.</li>
+          <li>Relació de contrast cromàtic superior a 4.5:1 en el text principal, d'acord amb el criteri WCAG 1.4.3.</li>
+          <li>Navegació completa per teclat en tots els components interactius (nav, modals, acordions, formularis).</li>
+          <li>Estat de focus visible en tots els elements interactius.</li>
+          <li>Formularis de contacte amb etiquetes associades i missatges d'error identificables.</li>
+          <li>Atributs <code>aria-label</code> i <code>aria-hidden</code> en elements decoratius i components dinàmics.</li>
+          <li>Mida de text responsive que respecta les preferències d'escala del sistema de l'usuari.</li>
+          <li>Atribut <code>lang="ca"</code> declarat a l'element arrel de totes les pàgines.</li>
+          <li>Els vídeos de fons es reprodueixen en silenci i disposen d'alternativa visual estàtica.</li>
+        </ul>
+      </section>
+
+      <hr class="legal-divider">
+
+      <!-- 04 -->
+      <section class="legal-section" id="limitacions">
+        <span class="legal-section-num">04</span>
+        <h2 class="legal-section-title">Limitacions conegudes</h2>
+        <p>Tot i les mesures adoptades, existeixen continguts del Lloc web que presenten les limitacions d'accessibilitat següents:</p>
+        <ul>
+          <li><strong>Vídeos de fons:</strong> Els vídeos decoratius de les pàgines principals no disposen de subtítols ni audiodescripció, atès que no contenen informació essencial i es complementen amb contingut textual alternatiu.</li>
+          <li><strong>Imatges d'alt contingut visual:</strong> Algunes imatges fotogràfiques d'obres d'art o exposicions disposen d'alternatives textuals generals que no descriuen amb detall el contingut visual complet.</li>
+          <li><strong>Documents PDF:</strong> Alguns documents disponibles per a descàrrega poden no complir completament els requisits d'accessibilitat. Estem treballant per millorar-ne el format.</li>
+          <li><strong>Contingut de tercers:</strong> El contingut integrat de xarxes socials (Instagram, Facebook, YouTube, Spotify) i els seus reproductors externs no estan sota el control directe del Centre i poden no complir tots els criteris WCAG 2.1 AA.</li>
+        </ul>
+        <p>Treballem de manera activa per reduir i eliminar progressivament aquestes limitacions.</p>
+      </section>
+
+      <hr class="legal-divider">
+
+      <!-- 05 -->
+      <section class="legal-section" id="alternatives">
+        <span class="legal-section-num">05</span>
+        <h2 class="legal-section-title">Alternatives accessibles</h2>
+        <p>Si no podeu accedir a determinats continguts del Lloc web per motius d'accessibilitat, podeu sol·licitar-los en un format alternatiu accessible contactant amb el Centre a través dels canals indicats a l'apartat de Contacte.</p>
+        <p>El Centre es compromet a respondre a les sol·licituds en un termini màxim de <strong>15 dies hàbils</strong> i a facilitar la informació en el format més adequat a les necessitats de la persona sol·licitant, sempre que sigui tècnicament possible.</p>
+      </section>
+
+      <hr class="legal-divider">
+
+      <!-- 06 -->
+      <section class="legal-section" id="contacte">
+        <span class="legal-section-num">06</span>
+        <h2 class="legal-section-title">Contacte i comentaris</h2>
+        <p>Si teniu dificultats per accedir a qualsevol contingut del Lloc web, detecteu algun problema d'accessibilitat o voleu fer-nos arribar qualsevol suggeriment de millora, podeu posar-vos en contacte amb nosaltres per qualsevol d'aquests canals:</p>
+        <ul>
+          <li>Correu electrònic: <a href="mailto:santamonica@gencat.cat">santamonica@gencat.cat</a></li>
+          <li>Adreça postal: Centre d'Arts Santa Mònica, La Rambla, 7, 08002 Barcelona</li>
+          <li>Telèfon: 93 316 28 10 (de dilluns a divendres, de 10 h a 14 h i de 16 h a 19 h)</li>
+          <li>Formulari de contacte: <a href="index.html#contactForm">Contacte</a></li>
+        </ul>
+        <p>Per facilitar la resposta, us demanem que indiqueu la URL de la pàgina afectada, el dispositiu i el navegador que utilizeu i una descripció del problema detectat.</p>
+      </section>
+
+      <hr class="legal-divider">
+
+      <!-- 07 -->
+      <section class="legal-section" id="procediment">
+        <span class="legal-section-num">07</span>
+        <h2 class="legal-section-title">Procediment de reclamació</h2>
+        <p>Si no esteu satisfets amb la resposta rebuda o si considereu que la vostra sol·licitud no ha estat atesa correctament, podeu presentar una queixa o reclamació davant l'<strong>Administració d'Accessibilitat Digital de la Generalitat de Catalunya</strong>, d'acord amb el que estableix el Reial decret 1112/2018.</p>
+        <p>Podeu accedir al procediment de reclamació a través del Portal de Transparència de la Generalitat de Catalunya o dirigint-vos al Departament de Polítiques Digitals i Administració Pública.</p>
+        <p>La present declaració d'accessibilitat es va redactar el maig de 2026 i es revisa periòdicament per garantir-ne la vigència i la precisió.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-col col-logo">
+          <img src="media/LOGOTIP_SM_negatiu.png" alt="Santa Mònica" class="footer-brand">
+        </div>
+        <div class="footer-col">
+          <a href="santa-monica.html" class="footer-title">Uneix-te al Santa Mònica</a>
+          <p class="footer-text">
+            Vols programar, exposar, actuar, col·laborar, treballar o fer pràctiques amb nosaltres? T'expliquem com fer-ho.
+          </p>
+        </div>
+        <div class="footer-col">
+          <a href="#" class="footer-title">Preguntes freqüents</a>
+          <p class="footer-text">
+            Consulta les preguntes més habituals i troba la resposta que busques.
+          </p>
+        </div>
+        <div class="footer-col footer-links">
+          <a href="#">Premsa</a>
+          <a href="#">Convocatòries</a>
+          <a href="#">Transparència</a>
+          <a href="accessibilitat.html">Accessibilitat</a>
+          <a href="index.html#contactForm">Contacte</a>
+        </div>
+        <div class="footer-col col-social">
+          <span class="footer-label-social">Segueix-nos</span>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/centredartssantamonica?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+              <img src="media/icons/Instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/centredartssantamonica/">
+              <img src="media/icons/Facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/@centredartssantamonica/videos">
+              <img src="media/icons/Youtube.svg" alt="Youtube">
+            </a>
+            <a href="https://open.spotify.com/show/2XfPIAbiKjf5RLUIC010Aw?si=94f9bc2fd46b4761">
+              <img src="media/icons/spotify.svg" alt="Spotify">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <img src="media/logos/generalitat.svg" alt="Generalitat de Catalunya" class="logo-gencat">
+        </div>
+        <div class="footer-bottom-right">
+          <div class="legal-links">
+            <a href="avis-legal.html">Avís legal</a>
+            <a href="accessibilitat.html">Accessibilitat web</a>
+            <a href="politica-galetes.html">Política de galetes</a>
+          </div>
+          <p class="copyright">© 2026 Centre d'Arts Santa Mònica | Tots els drets reservats.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1227 @@
+/* ==========================================================================
+   UI.CSS — Components interactius: modals, buscador, carousels viewport
+   Ordre de cascada: base.css → pages.css → ui.css
+   ========================================================================== */
+
+
+/* ========================================================================
+   MODAL ACTIVITATS (act-modal)
+   Usat a: index.html (Properes activitats) + exp-act.html + exp-xiuxiueigs.html
+   Disseny editorial: monospace, jerarquia, barra de progrés de scroll.
+
+   Nota sobre scroll lock: body.modal-open usa position:fixed per evitar el
+   jump de scroll a iOS quan el teclat virtual apareix. El valor de 'top'
+   s'assigna dinàmicament via JS: body.style.top = -scrollY px
+   ======================================================================== */
+
+/* Cursor i hover als ítems clickables */
+.inst-item,
+.activity-item {
+  cursor: pointer;
+  transition: background 0.22s ease;
+}
+.inst-item:hover,
+.activity-item:hover {
+  background: rgba(5, 24, 245, 0.025);
+}
+.inst-item .inst-img-container img,
+.activity-item .activity-img img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.inst-item:hover .inst-img-container img,
+.activity-item:hover .activity-img img {
+  transform: scale(1.04);
+}
+
+/* ── Overlay ── */
+/* Usem opacity:0/visibility:hidden en lloc de display:none perquè
+   permet la transició d'entrada suau (display:none talla l'animació) */
+.act-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(1, 5, 60, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.38s ease, visibility 0.38s ease;
+}
+
+.act-modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Panel principal ── */
+.act-modal {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  width: 100%;
+  max-width: 1060px;
+  height: 84vh;
+  max-height: 780px;
+  background: #fff;
+  overflow: hidden;
+  transform: translateY(32px);
+  opacity: 0;
+  transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.38s ease;
+}
+
+.act-modal-overlay.is-open .act-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ── Columna imatge (esquerra, full-bleed) ── */
+.act-modal-img-col {
+  position: relative;
+  overflow: hidden;
+  background: rgba(5, 24, 245, 0.04);
+}
+
+.act-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* El delay de 0.2s en el scale fa que la imatge sembli que "respira"
+     quan entres al modal */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.act-modal-overlay.is-open .act-modal-img {
+  transform: scale(1.03);
+}
+
+/* ── Columna dreta ── */
+.act-modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(5, 24, 245, 0.14);
+  overflow: hidden;
+}
+
+/* ── Barra de progrés (Credits-style) ── */
+.act-modal-progress-bar {
+  height: 2px;
+  background: rgba(5, 24, 245, 0.1);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.act-modal-progress-fill {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--blue-sm, #0518F5);
+  transition: width 0.06s linear;
+}
+
+/* ── Botó tancar ── */
+.act-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--blue-sm, #0518F5);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0.38;
+  padding: 6px 8px;
+  transition: opacity 0.22s ease;
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+}
+
+.act-modal-close:hover { opacity: 1; }
+
+/* ── Àrea interior ── */
+.act-modal-inner {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 36px 28px;
+}
+
+/* ── Títol ── */
+.act-modal-title {
+  flex-shrink: 0;
+  color: var(--blue-sm, #0518F5);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+  padding-right: 36px;
+}
+
+/* ── Metadata (Credits-style: label | valor) ── */
+.act-modal-meta {
+  flex-shrink: 0;
+  margin-bottom: 14px;
+}
+
+.act-modal-meta-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(5, 24, 245, 0.09);
+  align-items: baseline;
+}
+
+.act-modal-meta-row:first-child {
+  border-top: 1px solid rgba(5, 24, 245, 0.09);
+}
+
+.act-modal-meta-label {
+  font-family: 'Atlas Typewriter LC Trial', 'Courier New', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--blue-sm, #0518F5);
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.act-modal-meta-value {
+  color: var(--blue-sm, #0518F5);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+/* ── Descripció — alçada fixa ~4 línies, scroll intern ── */
+.act-modal-desc-wrap {
+  position: relative;
+  flex-shrink: 0;
+  height: 174px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.act-modal-desc {
+  height: 100%;
+  color: var(--blue-sm, #0518F5);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0.7;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(5, 24, 245, 0.14) transparent;
+}
+
+.act-modal-desc::-webkit-scrollbar { width: 2px; }
+.act-modal-desc::-webkit-scrollbar-track { background: transparent; }
+.act-modal-desc::-webkit-scrollbar-thumb {
+  background: rgba(5, 24, 245, 0.18);
+  border-radius: 2px;
+}
+
+/* Gradient fade — s'amaga quan s'arriba al final */
+.act-modal-desc-fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 8px;
+  height: 28px;
+  background: linear-gradient(to bottom, transparent, #fff);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+/* ── Secció formulari — empenyida al fons ── */
+.act-modal-form-section {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(5, 24, 245, 0.09);
+}
+
+.act-modal-form-label {
+  font-family: 'Atlas Typewriter LC Trial', 'Courier New', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--blue-sm, #0518F5);
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Camps de formulari — minimal, underline */
+.act-modal-field {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(5, 24, 245, 0.51);
+  padding: 9px 0;
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-size: 14px;
+  color: var(--blue-sm, #0518F5);
+  background: transparent;
+  outline: none;
+  display: block;
+  transition: border-color 0.22s ease;
+}
+
+.act-modal-field::placeholder {
+  color: var(--blue-sm, #0518F5);
+  opacity: 0.28;
+}
+
+.act-modal-field:focus {
+  border-bottom-color: var(--blue-sm, #0518F5);
+}
+
+/* Fila selector d'entrades */
+.act-modal-counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(5, 24, 245, 0.09);
+  margin-top: 2px;
+}
+
+.act-modal-counter-label {
+  font-family: 'Atlas Typewriter LC Trial', 'Courier New', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--blue-sm, #0518F5);
+  opacity: 0.8;
+}
+
+.act-modal-counter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Botons +/− */
+.act-modal-counter-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid rgba(5, 24, 245, 0.22);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--blue-sm, #0518F5);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+}
+
+.act-modal-counter-btn:hover {
+  background: var(--blue-sm, #0518F5);
+  border-color: var(--blue-sm, #0518F5);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.act-modal-counter-num {
+  color: var(--blue-sm, #0518F5);
+  font-size: 20px;
+  font-weight: 400;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* CTA — idèntic a .btn-yellow de la web */
+.act-modal-cta {
+  display: block;
+  width: 100%;
+  background: #F1FF9D;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 14px 0;
+  margin-top: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  transition: background-color 0.3s ease, transform 0.22s ease;
+}
+
+.act-modal-cta:hover {
+  background-color: #e2f08a;
+  transform: scale(1.05);
+}
+
+/* ── Confirmació inscripció ── */
+.act-modal-confirm {
+  display: none;
+  opacity: 0;
+  text-align: center;
+  padding: 32px 0 16px;
+  transition: opacity 0.4s ease;
+}
+
+.act-modal-confirm.is-visible {
+  opacity: 1;
+}
+
+.act-modal-confirm-icon {
+  width: 54px;
+  height: 54px;
+  background: #F1FF9D;
+  color: var(--blue-sm, #0518F5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 18px;
+  border: 2px solid var(--blue-sm, #0518F5);
+}
+
+.act-modal-confirm-title {
+  color: var(--blue-sm, #0518F5);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.act-modal-confirm-text {
+  color: var(--blue-sm, #0518F5);
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.62;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ── Responsive act-modal — Tablet ── */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .act-modal {
+    grid-template-columns: 38% 62%;
+    height: 88vh;
+    max-height: none;
+  }
+  .act-modal-title { font-size: 32px; }
+  .act-modal-inner { padding: 28px 28px 24px; }
+  .act-modal-desc-wrap { height: 164px; margin-top: 8px; }
+  .act-modal-meta-row { grid-template-columns: 110px 1fr; }
+}
+
+/* ── Responsive act-modal — Mobile ── */
+/* Bottom sheet: entra des de baix, ocupa quasi tota la pantalla */
+@media (max-width: 767px) {
+  .act-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .act-modal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 34vh 1fr;
+    width: 100%;
+    height: 92vh;
+    max-height: none;
+    border-radius: 14px 14px 0 0;
+    transform: translateY(56px);
+  }
+  .act-modal-overlay.is-open .act-modal {
+    transform: translateY(0);
+  }
+  .act-modal-img-col { border-left: none; }
+  .act-modal-content {
+    border-left: none;
+    border-top: 1px solid rgba(5, 24, 245, 0.1);
+  }
+  .act-modal-inner { padding: 22px 22px 20px; }
+  .act-modal-title {
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 12px;
+    padding-right: 32px;
+  }
+  .act-modal-meta { margin-bottom: 10px; }
+  .act-modal-meta-row {
+    grid-template-columns: 96px 1fr;
+    gap: 10px;
+    padding: 7px 0;
+  }
+  .act-modal-meta-label { font-size: 8px; }
+  .act-modal-meta-value { font-size: 12px; }
+  .act-modal-desc-wrap { height: 128px; margin-top: 6px; }
+  .act-modal-desc { font-size: 12.5px; }
+  .act-modal-form-section { padding-top: 14px; }
+  .act-modal-form-label { margin-bottom: 8px; }
+  .act-modal-field { padding: 7px 0; font-size: 13px; }
+  .act-modal-counter-row { padding: 10px 0; }
+  .act-modal-cta { padding: 12px 0; margin-top: 10px; font-size: 14px; }
+}
+
+
+/* ========================================================================
+   NEWS MODAL — Modal d'actualitat (santa-monica.html)
+   Reutilitza tot el sistema .act-modal-* per coherència visual.
+   Diferència: sense formulari → el cos de la notícia ocupa l'espai restant.
+   ======================================================================== */
+
+/* Hover als ítems de notícia */
+.inst-news-item {
+  cursor: pointer;
+  transition: background 0.22s ease;
+}
+.inst-news-item:hover {
+  background: rgba(5, 24, 245, 0.025);
+}
+.inst-news-item .inst-img-placeholder {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.inst-news-item:hover .inst-img-placeholder {
+  transform: scale(1.02);
+}
+
+/* ── Overlay ── */
+.news-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(1, 5, 60, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.38s ease, visibility 0.38s ease;
+}
+
+.news-modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Panel ── */
+.news-modal {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  width: 100%;
+  max-width: 1060px;
+  height: 84vh;
+  max-height: 780px;
+  background: #fff;
+  overflow: hidden;
+  transform: translateY(32px);
+  opacity: 0;
+  transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.38s ease;
+}
+
+.news-modal-overlay.is-open .news-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Zoom subtil de la imatge en obrir */
+.news-modal-overlay.is-open .act-modal-img {
+  transform: scale(1.03);
+}
+
+/* ── Cos de la notícia — flex:1, scroll intern ── */
+.news-modal-body-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.news-modal-body {
+  height: 100%;
+  color: var(--blue-sm, #0518F5);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+  opacity: 0.72;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(5, 24, 245, 0.14) transparent;
+}
+
+.news-modal-body::-webkit-scrollbar       { width: 2px; }
+.news-modal-body::-webkit-scrollbar-track { background: transparent; }
+.news-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(5, 24, 245, 0.18);
+  border-radius: 2px;
+}
+
+/* Gradient de fade al final del text */
+.news-modal-body-fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 8px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #fff);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+/* ── Tablet ── */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .news-modal {
+    grid-template-columns: 38% 62%;
+    height: 88vh;
+    max-height: none;
+  }
+  .news-modal-body { font-size: 13.5px; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .news-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .news-modal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 34vh 1fr;
+    width: 100%;
+    height: 92vh;
+    max-height: none;
+    border-radius: 14px 14px 0 0;
+    transform: translateY(56px);
+  }
+  .news-modal-overlay.is-open .news-modal {
+    transform: translateY(0);
+  }
+  .news-modal-body        { font-size: 13px; }
+  .news-modal-body-wrap   { margin-top: 12px; }
+}
+
+
+/* ========================================================================
+   ESPAI MODAL — Modal dels espais del centre (santa-monica.html)
+   Disseny: poc contingut → imatge protagonista (55%) + nombre com a
+   element tipogràfic fort. El buit és intencionat i editorial.
+   ======================================================================== */
+
+/* Hover als ítems d'espai */
+#inst-grid-espais .inst-item {
+  cursor: pointer;
+}
+.inst-img-placeholder {
+  overflow: hidden;
+}
+.inst-img-placeholder img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#inst-grid-espais .inst-item:hover .inst-img-placeholder img {
+  transform: scale(1.04);
+}
+
+/* ── Overlay ── */
+.espai-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(1, 5, 60, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.38s ease, visibility 0.38s ease;
+}
+.espai-modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Panel principal: 55% imatge · 45% text ── */
+.espai-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  width: 100%;
+  max-width: 1060px;
+  height: 78vh;
+  max-height: 720px;
+  background: #fff;
+  overflow: hidden;
+  transform: translateY(32px);
+  opacity: 0;
+  transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.38s ease;
+}
+.espai-modal-overlay.is-open .espai-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ── Columna imatge (esquerra) ── */
+.espai-modal-img-col {
+  position: relative;
+  overflow: hidden;
+  background: rgba(5, 24, 245, 0.04);
+}
+.espai-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.espai-modal-overlay.is-open .espai-modal-img {
+  transform: scale(1.03);
+}
+
+/* Badge número sobre la imatge (bottom-left) */
+.espai-modal-num-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  font-family: 'Atlas Typewriter LC Trial', 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(5, 24, 245, 0.48);
+  padding: 5px 10px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.42s ease 0.28s, transform 0.42s ease 0.28s;
+}
+.espai-modal-overlay.is-open .espai-modal-num-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Columna dreta ── */
+.espai-modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(5, 24, 245, 0.12);
+  overflow: hidden;
+}
+
+/* Nombre gran de fons — element decoratiu, cap semàntica */
+.espai-modal-num-bg {
+  position: absolute;
+  bottom: -28px;
+  right: -12px;
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-size: 240px;
+  font-weight: 700;
+  color: rgba(5, 24, 245, 0.042);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.2s;
+}
+.espai-modal-overlay.is-open .espai-modal-num-bg {
+  opacity: 1;
+}
+
+/* ── Àrea interior ── */
+.espai-modal-inner {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 36px 36px;
+  min-height: 0;
+}
+
+/* Etiqueta número (petita, monospace) */
+.espai-modal-num-label {
+  font-family: 'Atlas Typewriter LC Trial', 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(5, 24, 245, 0.38);
+  margin: 0 0 14px;
+  flex-shrink: 0;
+}
+
+/* Títol gran — porta tot el pes visual del text */
+.espai-modal-title {
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.022em;
+  color: #0518F5;
+  margin: 0;
+  padding-right: 44px;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.48s ease 0.15s, transform 0.48s cubic-bezier(0.4,0,0.2,1) 0.15s;
+}
+.espai-modal-overlay.is-open .espai-modal-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Espai flexible — el buit és una decisió de disseny */
+.espai-modal-spacer {
+  flex: 1;
+  min-height: 28px;
+}
+
+/* Divisor curt i fi — element de composició */
+.espai-modal-divider {
+  width: 28px;
+  height: 1px;
+  background: rgba(5, 24, 245, 0.28);
+  margin-bottom: 22px;
+  flex-shrink: 0;
+}
+
+.espai-modal-meta {
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.espai-modal-desc {
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: rgba(5, 24, 245, 0.55);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* ── Tablet ── */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .espai-modal {
+    grid-template-columns: 50% 50%;
+    height: 88vh;
+    max-height: none;
+  }
+  .espai-modal-title  { font-size: 34px; }
+  .espai-modal-num-bg { font-size: 190px; }
+  .espai-modal-inner  { padding: 36px 28px 28px; }
+}
+
+/* ── Mobile: bottom sheet ── */
+@media (max-width: 767px) {
+  .espai-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .espai-modal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 42vh auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 92vh;
+    border-radius: 14px 14px 0 0;
+    transform: translateY(56px);
+  }
+  .espai-modal-overlay.is-open .espai-modal {
+    transform: translateY(0);
+  }
+  .espai-modal-img-col { border-left: none; }
+  .espai-modal-content {
+    border-left: none;
+    border-top: 1px solid rgba(5, 24, 245, 0.1);
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  .espai-modal-num-bg  { font-size: 130px; bottom: -14px; right: -8px; }
+  .espai-modal-title   { font-size: 30px; padding-right: 38px; }
+  .espai-modal-inner   { padding: 28px 24px 28px; }
+  .espai-modal-spacer  { min-height: 20px; flex: none; }
+}
+
+
+/* ========================================================================
+   BUSCADOR D'EXPOSICIONS (exp-act.html)
+   Filtra per títol en temps real. El buscador és un input "hidden" que
+   s'expandeix en clic a la icona de la lupa.
+   ======================================================================== */
+
+/* Wrapper del buscador: línia inferior creix des del centre quan s'obre */
+.expo-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 5px 6px 6px;
+  cursor: pointer;
+}
+
+.expo-search-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: rgba(5, 24, 245, 0.55);
+  transition: width 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+              left   0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.expo-search-wrap.is-open::after {
+  left: 0;
+  width: 100%;
+}
+
+.expo-search-wrap label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.expo-search-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--blue-sm);
+  opacity: 0.72;
+  flex-shrink: 0;
+  display: block;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.expo-search-wrap:hover .expo-search-icon { opacity: 1; }
+.expo-search-wrap.is-open .expo-search-icon { opacity: 1; }
+
+/* Input — ocult per defecte, s'expandeix al obrir-se */
+.expo-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Atlas Typewriter LC Trial', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--blue-sm);
+  caret-color: var(--blue-sm);
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transition: width  0.42s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.32s ease 0.08s,
+              padding 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.expo-search-wrap.is-open .expo-search-input {
+  width: 220px;
+  opacity: 1;
+  padding: 0 8px 0 10px;
+  pointer-events: auto;
+}
+.expo-search-input::placeholder {
+  color: rgba(5, 24, 245, 0.32);
+  font-family: 'Atlas Typewriter LC Trial', monospace;
+}
+
+/* ── Results grid ── */
+/* display:none → display:grid: cal passar per la classe is-visible
+   perquè la transició d'animació es dispari correctament */
+.expo-search-results {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1.5px solid var(--blue-sm);
+  border-bottom: 1.5px solid var(--blue-sm);
+  margin-bottom: 32px;
+  animation: expoResultsFadeIn 0.3s ease both;
+}
+.expo-search-results.is-visible {
+  display: grid;
+}
+
+@keyframes expoResultsFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.expo-result-card {
+  padding: 20px 18px;
+  border-right: 1px solid rgba(5, 24, 245, 0.14);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+.expo-result-card:last-child,
+.expo-result-card:nth-child(4n) {
+  border-right: none;
+}
+.expo-search-results:hover .expo-result-card { opacity: 0.4; }
+.expo-search-results:hover .expo-result-card:hover { opacity: 1; }
+
+.expo-result-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 14px;
+  width: 100%;
+  background: rgba(5, 24, 245, 0.05);
+}
+.expo-result-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.expo-result-card:hover .expo-result-img img { transform: scale(1.04); }
+
+.expo-result-title {
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--blue-sm);
+  line-height: 1.15;
+  margin: 0 0 7px;
+}
+.expo-result-date {
+  font-family: 'Atlas Typewriter LC Trial', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(5, 24, 245, 0.42);
+  text-transform: uppercase;
+}
+
+/* Estat buit (sense resultats) */
+.expo-no-results {
+  grid-column: 1 / -1;
+  padding: 64px 0 56px;
+  text-align: center;
+  font-family: 'Atlas Typewriter LC Trial', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(5, 24, 245, 0.28);
+}
+
+/* ── Buscador tablet: resultats 2 columnes ── */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .expo-search-results { grid-template-columns: repeat(2, 1fr); }
+  .expo-result-card:nth-child(2n) { border-right: none; }
+  .expo-result-card:nth-child(4n) { border-right: 1px solid rgba(5, 24, 245, 0.14); }
+}
+
+/* ── Buscador mobile ── */
+/* Quan s'obre, l'input ocupa l'espai disponible del flex row.
+   Usem max-width en lloc de width fix per deixar que el flex distribueixi. */
+@media (max-width: 767px) {
+  .expo-search-wrap {
+    flex-shrink: 0;
+    padding: 4px 0 6px;
+  }
+  .expo-search-wrap.is-open {
+    flex: 1;
+    min-width: 0;
+  }
+  .expo-search-wrap.is-open .expo-search-input {
+    width: 100% !important;
+    max-width: none;
+    padding: 0 6px 0 10px;
+  }
+  /* Results: una columna */
+  .expo-search-results { grid-template-columns: 1fr; }
+  .expo-result-card {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(5, 24, 245, 0.1);
+  }
+  .expo-result-card:last-child { border-bottom: none; }
+}
+
+
+/* ========================================================================
+   EXPO DESKTOP/TABLET CAROUSEL (exp-act.html)
+   ======================================================================== */
+
+/* Carousel desktop/tablet: invisible a mobile */
+.expo-mobile-carousel { display: none; }
+
+.expo-desktop-carousel-wrap { width: 100%; }
+
+#expo-desktop-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+#expo-desktop-track {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expo-desktop-page {
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+/* Paginació expo desktop: visible per defecte */
+#pagination-expo-desktop {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* Mobile: oculta el desktop carousel i mostra el mobile carousel */
+@media (max-width: 767px) {
+  .expo-desktop-carousel-wrap { display: none; }
+  #pagination-expo-desktop { display: none; }
+  .expo-mobile-carousel { display: block; }
+}
+
+
+/* ========================================================================
+   EXPO MOBILE CAROUSEL (exp-act.html)
+   ======================================================================== */
+
+/* Viewport i track del carousel mòbil d'exposicions */
+.expo-carousel-viewport-mobile {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-top: 1.5px solid var(--blue-sm);
+  border-bottom: 1.5px solid var(--blue-sm);
+}
+
+.expo-carousel-track-mobile {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease-in-out;
+}
+
+.expo-card-mobile,
+.expo-card-mobile * {
+  cursor: pointer;
+}
+.expo-card-mobile {
+  flex: 0 0 100%;
+  min-width: 100%;
+  padding: 20px 0;
+}
+
+.expo-card-mobile .expo-img-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.expo-card-mobile .expo-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.expo-card-mobile .expo-text .item-name { font-size: 18px; }
+.expo-card-mobile .expo-text .item-info { font-size: 13px; opacity: 0.7; }
+
+/* Paginació expo mobile */
+#pagination-expo-mobile {
+  display: flex !important;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  #pagination-expo-mobile { margin-top: 32px; margin-bottom: 16px; }
+}
+
+
+/* ========================================================================
+   CAROUSEL ACTIVITATS (index.html) — Viewport i paginació
+   ======================================================================== */
+
+/* Viewport base (compartit amb exp-act.html en versió index) */
+.carousel-viewport {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-top: 1px solid #0518F5;
+  border-bottom: 1px solid #0518F5;
+}
+
+.activities-grid {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Paginació de la home: oculta per defecte, visible a tablet i mobile */
+.activities-pagination {
+  display: none;
+}
+
+/* Tablet: 2 columnes — aquí canvio a columna perquè en tablet 4 cards
+   quedaven massa estretes */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .carousel-viewport {
+    width: 100% !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+  .activities-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+  .activities-pagination {
+    display: flex !important;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .page-num:nth-child(n+3) { display: none !important; }
+}
+
+/* Mobile: 1 ítem per pàgina */
+@media (max-width: 767px) {
+  .carousel-viewport {
+    width: 100% !important;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+  .activities-pagination {
+    display: flex !important;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+}

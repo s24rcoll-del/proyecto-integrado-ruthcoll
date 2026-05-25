@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:,">
+  <meta name="author" content="Ruth Coll">
+  <title>Santa Mònica — El Centre</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/ui.css">
+</head>
+<body class="page-sm">
+
+  <!-- NAVEGACIÓ -->
+  <nav>
+    <div class="logo-placeholder">
+      <a href="index.html" aria-label="Santa Mònica — tornar a l'inici">
+        <img class="img-logo" src="media/logos/LOGOTIP_SM_positiu.svg" alt="Santa Mònica">
+      </a>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">INICI</a>
+      <a class="nav-link" href="exp-act.html">EXPOSICIONS I ACTIVITATS</a>
+      <a class="nav-link" href="visita.html">VISITA</a>
+      <a class="nav-link nav-link--active" href="santa-monica.html">EL SANTA MÒNICA</a>
+    </div>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- HERO VÍDEO -->
+  <section class="hero-video-container">
+    <video data-autoplay muted loop playsinline preload="none" class="hero-video">
+      <source src="media/video-santa-monica.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay-content">
+      <h1 class="hero-title-institutional">EL SANTA MÒNICA</h1>
+    </div>
+  </section>
+
+  <!-- ACTUALITAT -->
+  <section class="container-fluid py-5 sm-reveal">
+    <h2 class="inst-section-title">Actualitat</h2>
+    <div id="news-viewport">
+      <div class="inst-news-grid sm-stagger" id="inst-grid-news">
+
+        <div class="inst-news-item"
+          data-modal-img="media/act01.png"
+          data-modal-date="15 de desembre 2025 a les 11h"
+          data-modal-desc="El Santa Mònica presenta la programació per al 2026, un any en què vol aprofundir en la seva línia de treball basada en l'experimentació, la nova producció i la col·lectivització dels processos artístics. El projecte es consolida com un model que aposta per formats participatius i contrastats, amb un enfocament que interpel·la la ciutadania a reivindicar l'art com una àrea de pensament, debat i experimentació compartida. La temporada articularà la seva activitat entorn de dos grans eixos: exposicions amb projecció internacional i el focus de la Sala Bar, els programes de recerca, residències artístiques, mediació i educació. El Santa Mònica reafirma així el seu paper com a espai de trobada, creació i comunitat, afavorint que consolidi la seva presència dins l'escena artística catalana, amb vincles cada vegada més sòlids amb institucions internacionals.">
+          <div class="inst-img-placeholder" style="background-image: url('media/act01.png');"></div>
+          <h3 class="item-name">El Santa Mònica presenta la programació del 2026</h3>
+          <p class="item-info">15 de desembre 2025 a les 11h</p>
+        </div>
+
+        <div class="inst-news-item"
+          data-modal-img="media/act02.png"
+          data-modal-date="15 d'octubre 2025 a les 09h"
+          data-modal-desc="En solidaritat amb el poble palestí i en resposta a la crida de la vaga cultural convocada per diverses entitats del sector cultural català, el Santa Mònica suspèn totes les activitats públiques programades per al dia 15 d'octubre de 2025. El centre es suma a la mobilització que demana el cessament immediat de la violència i el respecte pels drets humans fonamentals. Les activitats afectades seran reprogramades properament i els assistents inscrits rebran notificació per correu electrònic amb les noves dates i horaris.">
+          <div class="inst-img-placeholder" style="background-image: url('media/act02.png');"></div>
+          <h3 class="item-name">El Santa Mònica suspèn l'activitat pública aquest 15 d'octubre amb motiu de la vaga per Palestina</h3>
+          <p class="item-info">15 d'octubre 2025 a les 09h</p>
+        </div>
+
+        <div class="inst-news-item"
+          data-modal-img="media/act03.png"
+          data-modal-date="15 de setembre 2025 a les 11h"
+          data-modal-desc="El Santa Mònica presenta les artistes i col·lectius seleccionats per al programa de residències Les Mòniques 2025-2026. Nou noms que durant la propera temporada habitaran l'espai del centre per desenvolupar els seus projectes de recerca i creació. El programa, que ja fa vuit anys que funciona, acull artistes en diverses fases de la seva trajectòria per facilitar la reflexió, l'experimentació i la connexió amb la comunitat creativa de Barcelona. Les Mòniques és un espai de confluència, de debat i de construcció col·lectiva que el centre considera un dels eixos vertebradors de la seva missió cultural.">
+          <div class="inst-img-placeholder" style="background-image: url('media/act03.png');"></div>
+          <h3 class="item-name">Presentem Les Mòniques de la temporada 2025 - 2026</h3>
+          <p class="item-info">15 de setembre 2025 a les 11h</p>
+        </div>
+
+        <div class="inst-news-item"
+          data-modal-img="media/act-04.jpg"
+          data-modal-date="10 de setembre de 2025 a les 12h"
+          data-modal-desc="El projecte 'Institucions en Mutació', organitzat per la Fundació Serralves de Porto, acull fins al mes de febrer de 2026 una exposició dedicada al Santa Mònica com a model de gestió cultural pública contemporània. La mostra repassa la trajectòria del centre des de la seva transformació el 2009 fins a l'actualitat, posant l'accent en els models de participació, co-producció i relació amb l'ecosistema artístic local i internacional. La inauguració va tenir lloc el 10 de setembre amb la presència de la direcció del centre i representants de la Generalitat de Catalunya.">
+          <div class="inst-img-placeholder">
+            <img src="media/act-04.jpg" alt="Exposició a Porto">
+          </div>
+          <h3 class="item-name">S'inaugura a Porto una exposició sobre el centre d'arts Santa Mònica i les noves institucionalitats</h3>
+          <p class="item-info">10 de setembre de 2025 a les 12h</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="activities-pagination" id="pagination-news">
+      <span class="page-num active" data-index="0">1</span>
+      <span class="page-num" data-index="1">2</span>
+      <span class="page-num" data-index="2">3</span>
+      <span class="page-num" data-index="3">4</span>
+    </div>
+  </section>
+
+  <!-- EL SANTA MÒNICA -->
+  <section class="container-fluid py-5 border-top-blue sm-reveal">
+    <h2 class="inst-section-title">El Santa Mònica</h2>
+    <div class="inst-info-grid">
+      <div class="inst-info-img">
+        <img src="media/centre-foto-stmonica.png" alt="Santa Mònica" class="img-fluid rounded-custom">
+      </div>
+      <div class="inst-info-text">
+        <div class="info-group">
+          <h3>Centre:</h3>
+          <p>El Santa Mònica és un centre d'arts públic, gratuït i obert a tothom. No és un museu, és un espai on descobrir la creació artística més contemporània...</p>
+        </div>
+        <div class="info-group">
+          <h3>Entrada:</h3>
+          <p>L'entrada al Santa Mònica és lliure i gratuïta.</p>
+        </div>
+        <div class="info-group">
+          <h3>Ubicació:</h3>
+          <p>La Rambla, 7. 08002 Barcelona <br> Tel. (+34) 935 671 110 <br> Email: <a href="mailto:santamonica@gencat.cat">santamonica@gencat.cat</a></p>
+        </div>
+        <div class="info-group">
+          <h3>Horaris:</h3>
+          <p>De dimarts a diumenge i festius: 11:00 – 20:30 h. <br> Dilluns tancat, excepte festius.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA FOTOGRÀFICA — pausa editorial, sense títol -->
+  <section class="container-fluid sm-gallery-section sm-reveal">
+    <div class="sm-gallery">
+
+      <figure class="sg-item">
+        <img src="media/galeria01.jpg" alt="Exposició amb instal·lació de terra i projecció de vídeo" loading="lazy">
+        <figcaption class="sg-caption">
+          <span class="sg-caption-num">01</span>
+          <span class="sg-caption-text">Exposició</span>
+        </figcaption>
+      </figure>
+
+      <figure class="sg-item">
+        <img src="media/galeria02.jpg" alt="Instal·lació de teclats i escala il·luminada" loading="lazy">
+        <figcaption class="sg-caption">
+          <span class="sg-caption-num">02</span>
+          <span class="sg-caption-text">Instal·lació</span>
+        </figcaption>
+      </figure>
+
+      <figure class="sg-item">
+        <img src="media/galeria03.jpg" alt="Visitants contemplant una projecció de vídeo" loading="lazy">
+        <figcaption class="sg-caption">
+          <span class="sg-caption-num">03</span>
+          <span class="sg-caption-text">Projecció</span>
+        </figcaption>
+      </figure>
+
+      <figure class="sg-item">
+        <img src="media/galeria04.jpg" alt="Instal·lació minimalista amb llit i llum càlida" loading="lazy">
+        <figcaption class="sg-caption">
+          <span class="sg-caption-num">04</span>
+          <span class="sg-caption-text">Instal·lació</span>
+        </figcaption>
+      </figure>
+
+      <figure class="sg-item">
+        <img src="media/galeria05.jpg" alt="Instal·lació amb panells translúcids i arcades de pedra" loading="lazy">
+        <figcaption class="sg-caption">
+          <span class="sg-caption-num">05</span>
+          <span class="sg-caption-text">Espai expositiu</span>
+        </figcaption>
+      </figure>
+
+      <figure class="sg-item">
+        <img src="media/galeria06.jpg" alt="Espais expositius del Centre d'Arts Santa Mònica" loading="lazy">
+        <figcaption class="sg-caption">
+          <span class="sg-caption-num">06</span>
+          <span class="sg-caption-text">Espais</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- QUI SOM -->
+  <section class="container-fluid sm-reveal" id="QiSom">
+    <h2 class="inst-section-title">Qui som?</h2>
+    <div class="accordion-container">
+
+      <!-- 1. EQUIP DEL CENTRE -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>EQUIP DEL CENTRE</span>
+          <img src="media/icons/Arrow-up.svg" alt="" class="arrow-up">
+        </button>
+        <div class="accordion-content">
+          <div class="acc-quisom qs-equip-wrap">
+
+            <p class="qs-manifesto">
+              Un centre d’arts públic, gratuït i obert a tothom.<br>
+              <em>No és un museu —</em> és un espai on descobrir<br>la creació artística més contemporània.
+            </p>
+
+            <div class="qs-dept-grid">
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Direcció</span>
+                <p class="qs-dept-name">Enric Puig Punyet</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Administració</span>
+                <p class="qs-dept-name">Úrsula Tenorio</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Gestió econòmica</span>
+                <p class="qs-dept-name">Miguel Morilla Hernández</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Exposicions</span>
+                <p class="qs-dept-name">Roger Vinent Arnau</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Producció tècnica</span>
+                <p class="qs-dept-name">Marina Rubio Marco</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Activitats</span>
+                <p class="qs-dept-name">Eva Ruiz</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Producció d’activitats</span>
+                <p class="qs-dept-name">Julia Gutiérrez</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Projectes transversals</span>
+                <p class="qs-dept-name">Andreu Carreras i Novich</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Mediació i Educació</span>
+                <p class="qs-dept-name">Marta Gracia Valladares<br>Cristina Sanz-Gadea Ferret</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Suport a mediació i educació</span>
+                <p class="qs-dept-name">Anaïs Córdova Poblete</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Comunicació i premsa</span>
+                <p class="qs-dept-name">Clara Bofill Pumarola</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Xarxes i continguts digitals</span>
+                <p class="qs-dept-name">Rita Fernández</p>
+              </div>
+              <div class="qs-dept-block">
+                <span class="qs-dept-label">Suport a comunicació</span>
+                <p class="qs-dept-name">Júlia Net Valiente<br>Lucía Romero Castillo</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. LES MÒNIQUES -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>ARTISTES EN RESIDÈNCIA: LES MÒNIQUES 25–26</span>
+          <img src="media/icons/Arrow-up.svg" alt="" class="arrow-up">
+        </button>
+        <div class="accordion-content">
+          <div class="acc-quisom qs-moniques-wrap">
+
+            <div class="qs-moniques-intro">
+              <p class="qs-moniques-big">Les<br>Mòni&shy;ques<br>25–26</p>
+              <p class="qs-moniques-desc">Artistes en residència organitzades en gremis de treball. Cada gremi actua com un cos col·lectiu que contribueix activament a la programació, la recerca i l’ecosistema creatiu del centre.</p>
+            </div>
+
+            <div class="qs-gremi-grid">
+              <div class="qs-gremi-item">
+                <span class="qs-gremi-label">Gremi de Comunicació</span>
+                <div class="qs-gremi-members">
+                  <span class="qs-gremi-name">Barby Boustier</span>
+                  <span class="qs-gremi-name">Ezequiel Soriano</span>
+                </div>
+              </div>
+              <div class="qs-gremi-item">
+                <span class="qs-gremi-label">Gremi de Digitalització</span>
+                <div class="qs-gremi-members">
+                  <span class="qs-gremi-name">Helena Roig Prats</span>
+                  <span class="qs-gremi-name">Rodrigo Yrigoyen Gonzales</span>
+                  <span class="qs-gremi-name">Xeito Fole</span>
+                </div>
+              </div>
+              <div class="qs-gremi-item">
+                <span class="qs-gremi-label">Gremi d’Edició</span>
+                <div class="qs-gremi-members">
+                  <span class="qs-gremi-name">David Coñomán Romero</span>
+                  <span class="qs-gremi-name">Lourdes Gay-Punzano</span>
+                  <span class="qs-gremi-name">Mercedes Saya Rosés</span>
+                </div>
+              </div>
+              <div class="qs-gremi-item">
+                <span class="qs-gremi-label">Gremi d’Educació</span>
+                <div class="qs-gremi-members">
+                  <span class="qs-gremi-name">Anita García</span>
+                  <span class="qs-gremi-name">Juani Ávila Rodríguez</span>
+                  <span class="qs-gremi-name">Roc Domingo Puig</span>
+                </div>
+              </div>
+              <div class="qs-gremi-item">
+                <span class="qs-gremi-label">Gremi d’Espais</span>
+                <div class="qs-gremi-members">
+                  <span class="qs-gremi-name">Jonah Kawri Ramírez Sturzenegger</span>
+                  <span class="qs-gremi-name">Mana Pinto Amaya</span>
+                  <span class="qs-gremi-name">Maria Zreiq</span>
+                  <span class="qs-gremi-name">Rasheed Jalloul</span>
+                </div>
+              </div>
+              <div class="qs-gremi-item">
+                <span class="qs-gremi-label">Gremi de Gastronomia</span>
+                <div class="qs-gremi-members">
+                  <span class="qs-gremi-name">Antonio Monroy Salas</span>
+                  <span class="qs-gremi-name">Mohammad Alsharqawi</span>
+                </div>
+              </div>
+              <div class="qs-gremi-item">
+                <span class="qs-gremi-label">Gremi de Participació</span>
+                <div class="qs-gremi-members">
+                  <span class="qs-gremi-name">Kha Villanueva</span>
+                  <span class="qs-gremi-name">Musa Céspedes Cárdenas</span>
+                  <span class="qs-gremi-name">Nadia Jabr Khaloof</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. GRUPS DE RECERCA -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>GRUPS DE RECERCA 24–25</span>
+          <img src="media/icons/Arrow-up.svg" alt="" class="arrow-up">
+        </button>
+        <div class="accordion-content">
+          <div class="acc-quisom qs-recerca-wrap">
+
+            <p class="qs-recerca-intro">Grups actius que investiguen des de pràctiques artístiques contemporànies, metodologies experimentals i formes de participació col·lectiva.</p>
+
+            <div class="qs-grup-list">
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Darsinà</span>
+                <p class="qs-grup-members-text">Sassouki Salma, Maha Ibraheem</p>
+              </div>
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Col·lectiu 1080</span>
+                <p class="qs-grup-members-text">Marla Jacarilla, Mònica Rovira, Renan Camilo</p>
+              </div>
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Coketa</span>
+                <p class="qs-grup-members-text">Facunda Aisa, Luciana Peña, Roma Murúa</p>
+              </div>
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Descompetir</span>
+                <p class="qs-grup-members-text">Nora Ancarola, Kekena Corvalán, Valentina Gaia Lops</p>
+              </div>
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Geografia sospitosa</span>
+                <p class="qs-grup-members-text">Quinny Martínez Hernández (Plataforma Cero), Herney Mosquera Garcés (MigrESS), Hilda Virginia Pérez Rodríguez, Lira Campoamor Sánchez, Elizabeth Montero Santa, María Eugenia Piola Simioli (Saberes Migrantes), Paula Durán Monfort (Saberes Migrantes)</p>
+              </div>
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Laboratori de cos i moviment</span>
+                <p class="qs-grup-members-text">Ivan Bercedo i Sales, Julieta Ferraro, Helena Minguet Sánchez, Marika Nava, Júlia Pérez Gonell, Guillem Rodri, Toxifics Laperallimonera, Pamdenàs</p>
+              </div>
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Meteorologies col·lectives</span>
+                <p class="qs-grup-members-text">Sonia Villar, Marian Madeleine Perez Jimenez, Mandi Domingo Llaràs</p>
+              </div>
+              <div class="qs-grup-row">
+                <span class="qs-grup-name">Resistència Videolúdica + Jugar jueguitos</span>
+                <p class="qs-grup-members-text">Laia Velasco Flo, Víctor Rubio i Maturana, Roque Piñeiro Vieira, Violeta Moldes Rivas</p>
+              </div>
+            </div>
+
+            <div class="qs-recerca-coord">
+              <div class="qs-recerca-coord-line"></div>
+              <span class="qs-recerca-coord-text">Coordinació de grups de recerca — Pablo Santa Olalla Moya</span>
+              <div class="qs-recerca-coord-line"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. SERVEI D’INFORMACIÓ I MEDIACIÓ -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>SERVEI D’INFORMACIÓ I MEDIACIÓ DE PÚBLICS</span>
+          <img src="media/icons/Arrow-up.svg" alt="" class="arrow-up">
+        </button>
+        <div class="accordion-content">
+          <div class="acc-quisom qs-mediacio-wrap">
+
+            <div class="qs-mediacio-header">
+              <p class="qs-mediacio-title">Klousner</p>
+              <p class="qs-mediacio-desc">Servei públic d’informació i mediació de públics del Santa Mònica. Acompanya, orienta i facilita el vincle entre les propostes artístiques del centre i els seus visitants.</p>
+            </div>
+
+            <div class="qs-mediacio-names">
+              <div class="qs-mediacio-name-item">Alba Coll Zapata</div>
+              <div class="qs-mediacio-name-item">Héctor Martos Avellaneda</div>
+              <div class="qs-mediacio-name-item">Josep Francesc Valero Garcia</div>
+              <div class="qs-mediacio-name-item">Nico Aranibar Real</div>
+              <div class="qs-mediacio-name-item">Oscar Canal Vicente</div>
+              <div class="qs-mediacio-name-item">Raül González Carrasco</div>
+              <div class="qs-mediacio-name-item">Roser Martín Ausió</div>
+              <div class="qs-mediacio-name-item">Sílvia Camacho Riart</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. SERVEIS DEL CENTRE -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>SERVEIS DEL CENTRE</span>
+          <img src="media/icons/Arrow-up.svg" alt="" class="arrow-up">
+        </button>
+        <div class="accordion-content">
+          <div class="acc-quisom qs-serveis-wrap">
+
+            <p class="qs-serveis-intro">Serveis especialitzats que donen suport a la producció, difusió i experiència del centre, gestionats per empreses i professionals externs.</p>
+
+            <div class="qs-serveis-dir">
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Disseny gràfic</span>
+                </div>
+                <p class="qs-servei-noms">Ellen Dietrich</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Fotografies</span>
+                </div>
+                <p class="qs-servei-noms">Jordi Play</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Il·luminació</span>
+                  <span class="qs-servei-company">Ovejero Sequeiro, S.L. — División de Arte</span>
+                </div>
+                <p class="qs-servei-noms">Ángel Artime Tamayo, Daniel Gómez Batalla, Ferdinand Ángeles López, Miguel Ángel Derecho Hernández</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Impressió</span>
+                  <span class="qs-servei-company">Imprenta Online SL</span>
+                </div>
+                <p class="qs-servei-noms">—</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Manteniment</span>
+                  <span class="qs-servei-company">Urbia Services</span>
+                </div>
+                <p class="qs-servei-noms">Ariel Agustopa, José María de Santos, Marc Ferrer, Mohamed Laghmich</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Muntatge</span>
+                  <span class="qs-servei-company">Grop exposicions i museografia, SL</span>
+                </div>
+                <p class="qs-servei-noms">Andrea Vergara Sanchez, Carles Portillo Recio, Danilo Cuffia Presser, David Segura Marfil, Edu Segura Domenech, Enrique Vergara Regueiro, Ernest Montllor Nogués, Esteban Hernandez Fernandez, Favio Monza Tempone, Irene Julve Nieto, Javier Ponsá Torres, Jaume Vila Clarà Martin, Luis Sanchón Ortas, Mariano Verdejo, Pol Vélez Domenech, Pol Vergara Sanchez, Raul Baeza Calleja, Ricard Sellarés Puig, Xavi Hernandez Ruiz</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Neteja</span>
+                  <span class="qs-servei-company">Mitie Facilities Services S.A.</span>
+                </div>
+                <p class="qs-servei-noms">Daniel Delgado, Elizabet Tipán, Julia Barrueto, Lali Ventaja, Lídia Toala, Niurki Cuevas, Rosa Bajaña</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Pintura</span>
+                  <span class="qs-servei-company">Projectes Micma, SL</span>
+                </div>
+                <p class="qs-servei-noms">Adolfo Aliaga Torrez, Álvar Alegre Crivellés, Andrés Gázquez Oronich, Bladimir Arancibia Fuentes, Carlos Roca Echevarria, David Martos Álvarez, Francisco Javier Nicolas Domingo, Ignasi Roqueta Homs, Jose Antonio Rivera Román, Salvador Mateo Serrat, Temur Kipiani</p>
+              </div>
+
+              <div class="qs-serveis-row">
+                <div class="qs-servei-label-wrap">
+                  <span class="qs-servei-label">Seguretat</span>
+                  <span class="qs-servei-company">SPM Seguridad</span>
+                </div>
+                <p class="qs-servei-noms">Daniel Sanchez Sánchez, Juan Carlos Alba Collado, Junior Augusto Ortiz Medina, Mileydis Landestoy, Mirta Albala López</p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ESPAIS -->
+  <section class="container-fluid sm-reveal" id="Espais">
+    <h2 class="inst-section-title">Espais</h2>
+    <div id="espais-viewport">
+      <div class="inst-grid-espais sm-stagger" id="inst-grid-espais">
+
+        <!-- 01 Espais expositius -->
+        <div class="inst-item"
+             data-modal-type="Espai expositiu"
+             data-modal-floor="PB · 1ª · 2ª planta"
+             data-modal-capacity="1.000 m²"
+             data-modal-desc="El centre ofereix 1.000 m² d'espai expositiu repartits en planta baixa, primera i segona planta. Les reformes arquitectòniques del 2021 i 2024 han anat reobrint i connectant els espais amb la voluntat d'obrir-los més a l'exterior i acostar l'art contemporani a la ciutadania de Barcelona.">
+          <div class="inst-img-placeholder">
+            <img src="media/espais-01.jpg" alt="Espais expositius del Santa Mònica">
+            <span class="espai-num" aria-hidden="true">01</span>
+          </div>
+          <div class="inst-text-content">
+            <h3 class="inst-item-title">Espais expositius</h3>
+            <span class="espai-item-tag">1.000 m² · PB + 1ª + 2ª</span>
+          </div>
+        </div>
+
+        <!-- 02 Sala d'actes -->
+        <div class="inst-item"
+             data-modal-type="Espai polivalent"
+             data-modal-floor="Segona planta"
+             data-modal-capacity="Aforament variable"
+             data-modal-desc="Espai polivalent i diàfan que acull les recerques i laboratoris processuals de creadors. Ofereix programació vinculada als cicles expositius i acull el programa d'aprenentatge i recerca Situacions, que explora els marges entre art, pedagogia i vida quotidiana.">
+          <div class="inst-img-placeholder">
+            <img src="media/espais-04.jpg" alt="Sala d'actes del Santa Mònica">
+            <span class="espai-num" aria-hidden="true">02</span>
+          </div>
+          <div class="inst-text-content">
+            <h3 class="inst-item-title">Sala d'actes</h3>
+            <span class="espai-item-tag">Polivalent · 2ª planta</span>
+          </div>
+        </div>
+
+        <!-- 03 Espai participatiu -->
+        <div class="inst-item"
+             data-modal-type="Espai interactiu"
+             data-modal-floor="Planta baixa · Vestíbul"
+             data-modal-capacity="Accés lliure"
+             data-modal-desc="Al vestíbul del centre hi trobaràs instal·lacions i recursos interactius que et conviden a reflexionar i participar en els debats i projectes del centre. Inclou un espai de consulta amb bibliografia relacionada amb les exposicions, punts de càrrega gratuïts i connexió Wi-Fi.">
+          <div class="inst-img-placeholder">
+            <img src="media/espais-05.jpg" alt="Espai participatiu del Santa Mònica">
+            <span class="espai-num" aria-hidden="true">03</span>
+          </div>
+          <div class="inst-text-content">
+            <h3 class="inst-item-title">Espai participatiu</h3>
+            <span class="espai-item-tag">Vestíbul · PB · Interactiu</span>
+          </div>
+        </div>
+
+        <!-- 04 Espai Mòniques -->
+        <div class="inst-item"
+             data-modal-type="Estudi compartit"
+             data-modal-floor="Al peu de la Rambla"
+             data-modal-capacity="Accés restringit"
+             data-modal-desc="Ubicat al peu de la Rambla, és l'espai de treball compartit de Les Mòniques, artistes residents i els grups de recerca del centre. Un entorn de comunitat i intercanvi on es desenvolupen processos creatius i d'investigació de llarg recorregut, fora de les lògiques del producte immediat.">
+          <div class="inst-img-placeholder">
+            <img src="media/espais-02.jpg" alt="Espai Mòniques del Santa Mònica">
+            <span class="espai-num" aria-hidden="true">04</span>
+          </div>
+          <div class="inst-text-content">
+            <h3 class="inst-item-title">Espai Mòniques</h3>
+            <span class="espai-item-tag">Residències · Recerca</span>
+          </div>
+        </div>
+
+        <!-- 05 Sala Bar -->
+        <div class="inst-item"
+             data-modal-type="Espai social"
+             data-modal-floor="Primera planta"
+             data-modal-capacity="Di–Dg · 11:00–16:00"
+             data-modal-desc="Espai polivalent, obert i d'ús comú on pots relaxar-te, connectar, llegir, reunir-te i menjar. Acull tres cicles regulars d'activitats (dimarts, dimecres i dijous a les 19h) amb propostes experimentals d'artistes. Màquines de vending, Wi-Fi i punts de càrrega gratuïts. Dilluns tancat.">
+          <div class="inst-img-placeholder">
+            <img src="media/espais-06.jpg" alt="Sala Bar del Santa Mònica">
+            <span class="espai-num" aria-hidden="true">05</span>
+          </div>
+          <div class="inst-text-content">
+            <h3 class="inst-item-title">Sala Bar</h3>
+            <span class="espai-item-tag">Social · 1ª planta</span>
+          </div>
+        </div>
+
+        <!-- 06 Terrassa -->
+        <div class="inst-item"
+             data-modal-type="Espai exterior"
+             data-modal-floor="Primera planta · Exterior"
+             data-modal-capacity="188 m²"
+             data-modal-desc="Un gran balcó exterior de 188 m² per estar-t'hi, compartir una estona i gaudir d'unes vistes privilegiades de la Rambla. Accessible des de la Sala Bar o per rampa exterior. Acull instal·lacions artístiques de temporada i és un dels espais més estimats del centre.">
+          <div class="inst-img-placeholder">
+            <img src="media/espais-03.jpg" alt="Terrassa del Santa Mònica">
+            <span class="espai-num" aria-hidden="true">06</span>
+          </div>
+          <div class="inst-text-content">
+            <h3 class="inst-item-title">Terrassa</h3>
+            <span class="espai-item-tag">Exterior · 188 m²</span>
+          </div>
+        </div>
+
+      </div><!-- /#inst-grid-espais -->
+    </div><!-- /#espais-viewport -->
+
+    <div class="activities-pagination" id="pagination-espais">
+      <span class="page-num active" data-index="0">1</span>
+      <span class="page-num" data-index="1">2</span>
+      <span class="page-num" data-index="2">3</span>
+      <span class="page-num" data-index="3">4</span>
+      <span class="page-num" data-index="4">5</span>
+      <span class="page-num" data-index="5">6</span>
+    </div>
+  </section>
+
+  <!-- IMATGE CORPORATIVA -->
+  <section class="container-fluid corporate-image-section sm-reveal">
+    <h2 class="corporate-title-top">Imatge corporativa</h2>
+    <div class="corporate-content-row">
+      <div class="corporate-download-box">
+        <p>Aquí pots descarregar el logotip del Santa Mònica en diferents formats, així com el manual bàsic d'ús amb les indicacions per fer-ne una aplicació correcta.</p>
+        <a href="media/MANUAL_LOGOTIP_SM.pdf" class="download-link" download="MANUAL_LOGOTIP_SM.pdf">Descarregar arxiu <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL ACTUALITAT ─────────────────────────────────────────────────── -->
+  <div class="news-modal-overlay" id="news-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="news-modal">
+
+      <!-- Columna esquerra: imatge full-bleed -->
+      <div class="act-modal-img-col">
+        <img class="act-modal-img" id="news-modal-img" src="" alt="">
+      </div>
+
+      <!-- Columna dreta: contingut -->
+      <div class="act-modal-content">
+        <div class="act-modal-progress-bar">
+          <div class="act-modal-progress-fill" id="news-modal-progress"></div>
+        </div>
+        <button class="act-modal-close" id="news-modal-close" aria-label="Tancar modal">×</button>
+
+        <div class="act-modal-inner">
+
+          <h2 class="act-modal-title" id="news-modal-title"></h2>
+
+          <div class="act-modal-meta">
+            <div class="act-modal-meta-row">
+              <span class="act-modal-meta-label">Data</span>
+              <span class="act-modal-meta-value" id="news-modal-date"></span>
+            </div>
+          </div>
+
+          <!-- Cos de la notícia — scroll intern, ocupa l'espai restant -->
+          <div class="news-modal-body-wrap">
+            <p class="news-modal-body" id="news-modal-body"></p>
+            <div class="news-modal-body-fade" id="news-modal-body-fade"></div>
+          </div>
+
+        </div><!-- /act-modal-inner -->
+      </div><!-- /act-modal-content -->
+
+    </div><!-- /news-modal -->
+  </div><!-- /news-modal-overlay -->
+
+  <!-- MODAL ESPAIS -->
+  <div id="espai-modal-overlay" class="espai-modal-overlay" aria-hidden="true">
+    <div class="espai-modal" role="dialog" aria-modal="true">
+
+      <!-- Columna imatge -->
+      <div class="espai-modal-img-col">
+        <img id="espai-modal-img" src="" alt="" class="espai-modal-img">
+        <div class="espai-modal-num-badge" id="espai-modal-num-badge" aria-hidden="true"></div>
+      </div>
+
+      <!-- Columna text -->
+      <div class="espai-modal-content">
+
+        <!-- Nombre gran de fons (decoració tipogràfica) -->
+        <div class="espai-modal-num-bg" id="espai-modal-num-bg" aria-hidden="true"></div>
+
+        <!-- Botó tancar -->
+        <button class="act-modal-close" id="espai-modal-close" aria-label="Tancar">×</button>
+
+        <!-- Contingut -->
+        <div class="espai-modal-inner">
+          <p class="espai-modal-num-label" id="espai-modal-num-label">Espai —</p>
+          <h2 class="espai-modal-title" id="espai-modal-title">—</h2>
+
+          <div class="espai-modal-spacer"></div>
+
+          <div class="espai-modal-divider"></div>
+
+          <div class="espai-modal-meta act-modal-meta">
+            <div class="act-modal-meta-row">
+              <span class="act-modal-meta-label">Tipus</span>
+              <span class="act-modal-meta-value" id="espai-modal-type">—</span>
+            </div>
+            <div class="act-modal-meta-row">
+              <span class="act-modal-meta-label">Planta</span>
+              <span class="act-modal-meta-value" id="espai-modal-floor">—</span>
+            </div>
+            <div class="act-modal-meta-row">
+              <span class="act-modal-meta-label">Capacitat</span>
+              <span class="act-modal-meta-value" id="espai-modal-capacity">—</span>
+            </div>
+          </div>
+
+          <p class="espai-modal-desc" id="espai-modal-desc"></p>
+        </div>
+
+      </div><!-- /espai-modal-content -->
+    </div><!-- /espai-modal -->
+  </div><!-- /espai-modal-overlay -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-col col-logo">
+          <img src="media/LOGOTIP_SM_negatiu.png" alt="Santa Mònica" class="footer-brand">
+        </div>
+        <div class="footer-col">
+          <a href="santa-monica.html" class="footer-title">Uneix-te al Santa Mònica</a>
+          <p class="footer-text">
+            Vols programar, exposar, actuar, col·laborar, treballar o fer pràctiques amb nosaltres? T'expliquem com fer-ho.
+          </p>
+        </div>
+        <div class="footer-col">
+          <a href="#" class="footer-title">Preguntes freqüents</a>
+          <p class="footer-text">
+            Consulta les preguntes més habituals i troba la resposta que busques.
+          </p>
+        </div>
+        <div class="footer-col footer-links">
+          <a href="#">Premsa</a>
+          <a href="#">Convocatòries</a>
+          <a href="#">Transparència</a>
+          <a href="accessibilitat.html">Accessibilitat</a>
+          <a href="index.html#contactForm">Contacte</a>
+        </div>
+        <div class="footer-col col-social">
+          <span class="footer-label-social">Segueix-nos</span>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/centredartssantamonica?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+              <img src="media/icons/Instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/centredartssantamonica/">
+              <img src="media/icons/Facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/@centredartssantamonica/videos">
+              <img src="media/icons/Youtube.svg" alt="Youtube">
+            </a>
+            <a href="https://open.spotify.com/show/2XfPIAbiKjf5RLUIC010Aw?si=94f9bc2fd46b4761">
+              <img src="media/icons/spotify.svg" alt="Spotify">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <img src="media/logos/generalitat.svg" alt="Generalitat de Catalunya" class="logo-gencat">
+        </div>
+        <div class="footer-bottom-right">
+          <div class="legal-links">
+            <a href="avis-legal.html">Avís legal</a>
+            <a href="accessibilitat.html">Accessibilitat web</a>
+            <a href="politica-galetes.html">Política de galetes</a>
+          </div>
+          <p class="copyright">© 2026 Centre d'Arts Santa Mònica | Tots els drets reservats.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/santa-monica.js"></script>
+</body>
+</html>

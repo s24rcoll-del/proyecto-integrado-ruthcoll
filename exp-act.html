@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <meta name="author" content="Ruth Coll">
+  <title>Exposicions i Activitats - Santa Mònica</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/ui.css">
+</head>
+<body class="page-exp-act">
+
+  <!-- NAVEGACIÓ -->
+  <nav>
+    <div class="logo-placeholder">
+      <a href="index.html" aria-label="Santa Mònica — tornar a l'inici">
+        <img class="img-logo" src="media/LOGOTIP_SM_negatiu.png" alt="Santa Mònica">
+      </a>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">INICI</a>
+      <a class="nav-link nav-link--active" href="exp-act.html">EXPOSICIONS I ACTIVITATS</a>
+      <a class="nav-link" href="visita.html">VISITA</a>
+      <a class="nav-link" href="santa-monica.html">EL SANTA MÒNICA</a>
+    </div>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- HERO EXPO ACTUAL — tota la card és clickable -->
+  <a href="exp-xiuxiueigs.html"
+     class="expo-hero-link-wrap"
+     aria-label="Exposició actual: Xiuxiueigs, Bullici i Paradoxes — Saber-ne més">
+    <section class="expo-hero-section" style="background-image: url('media/hero-exp-act.jpg');">
+      <div class="expo-hero-overlay">
+        <div class="expo-hero-content">
+          <div class="expo-status">
+            <span class="label">EXPOSICIÓ ACTUAL:</span>
+            <span class="dates">12.11.2025 - 01.02.2026</span>
+          </div>
+          <h1 class="expo-main-title">XIUXIUEIGS, BULLICI I<br>PARADOXES</h1>
+        </div>
+        <span class="btn-yellow" aria-hidden="true">Saber més sobre l'exposició</span>
+      </div>
+    </section>
+  </a>
+
+  <main class="main-container">
+
+    <!-- ================================================================
+         ACTIVITATS
+         ================================================================ -->
+    <section class="activities-section sm-reveal">
+      <div class="activities-header">
+        <h2 class="activities-title">Activitats</h2>
+
+        <!-- Filtres: data-filter ha de coincidir amb l'id del panel (panel-{key}) -->
+        <div class="activities-filters">
+          <a href="#" class="filter-link active" data-filter="dimarts">Dimarts de vídeo</a>
+          <a href="#" class="filter-link" data-filter="dimecres">Dimecres de so i cos</a>
+          <a href="#" class="filter-link" data-filter="dijous">Dijous de veu i paraula</a>
+        </div>
+      </div>
+
+      <!-- ── PANEL: DIMARTS DE VÍDEO ────────────────────────────────────── -->
+      <div class="acts-panel active" id="panel-dimarts">
+        <div class="carousel-viewport" id="acts-viewport-dimarts">
+          <div class="inst-grid-activities sm-stagger" id="inst-grid-dimarts">
+
+            <div class="inst-item"
+              data-modal-type="Projecció i taula rodona"
+              data-modal-location="Sala Bar"
+              data-modal-desc="5000 feminismos (2010) recull el retrat de la força política i organitzativa del feminisme a partir de la trobada del 6 de desembre de 2009, que commemorava el 30è aniversari de les primeres Jornadas Feministas de Granada amb una manifestació pel centre de la ciutat. Prop de cinc mil feministes es van reunir durant dues hores perquè una batucada, la Cofradía del Mismísimo Coño, una performance del col·lectiu Medeak i desenes de pancartes sostingudes per milers de cossos encarnessin l’amplitud del subjecte feminista.">
+              <div class="inst-img-container">
+                <img src="media/Corazon-que-late.png" alt="Corazón que late">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Corazón que late</h3>
+                <p class="item-info">10.03.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Projecció i debat"
+              data-modal-location="Sala Bar"
+              data-modal-desc="Carles Hac Mor (Lleida, 1940 - Sant Feliu de Guíxols, 2016) s’autoqualificava d’infrapoeta que no conreava el gènere literari de la biografia ni el subgènere del currículum. Malgrat això, podem dir que és autor d’una àmplia i molt rellevant obra artística transgressora i de caràcter experimental.
+Ester Xargay (Sant Feliu de Guíxols, 1960 - Palamós, 2024), escriptora i videoartista, va combinar aquestes pràctiques amb recitals, exposicions i concerts.
+Carles Hac Mor i Ester Xargay, a més de ser parella, van col·laborar en diverses propostes de recerca poètica i van coescriure diversos llibres. També van dur a terme un gran nombre d’activitats artístiques i literàries com l’organització d’exposicions o recitals de poesia.
+
+">
+              <div class="inst-img-container">
+                <img src="media/flux-summa.jpg" alt="FLUX SUMMA">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">FLUX SUMMA</h3>
+                <p class="item-info">24.03.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Projecció i debat"
+              data-modal-location="Sala Bar"
+              data-modal-desc="Projecció de dos curtmetratges produïts en el marc dels tallers de formació cinematogràfica del projecte de cinema de dones “Entre cineastes”, impulsat per la directora egípcia Amal Ramsis, que ens hi acompanyarà i amb qui podrem parlar sobre el cinema fet per dones a Egipte.
+
+I Love You, I Hate You, d’Aya Morsi (Egipte, 2020, 6 min, VOSC).">
+              <div class="inst-img-container">
+                <img src="media/entre-cineastes.jpg" alt="Activitat Dimarts 3">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Entre Cineastes</h3>
+                <p class="item-info">14.04.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Projecció i debat"
+              data-modal-location="Sala Bar"
+              data-modal-desc="Els cineastes Anna Giralt Gris i Jorge Caballero ens conviden a conèixer Artefacto, el seu centre de recerca i producció, així com el seu interès pel cinema expandit amb intel·ligència artificial (IA). La sessió inclourà videoprojeccions de les seves creacions més recents. 
+L’activitat abordarà una de les contradiccions amb què treballen: com es pot gestionar la tensió entre una creació artística rigorosa —centrada en la IA i el cinema computacional— i la recerca de la viralitat pròpia del nostre temps?
+Per reflexionar sobre aquesta qüestió, ens compartiran el seu procés creatiu i projectaran dues obres de recent producció:
+Membrana, volum I, un assaig fílmic basat en la novel·la Membrana, de Jorge Carrión.">
+              <div class="inst-img-container">
+                <img src="media/bangbang.jpg" alt="Activitat Dimarts 4">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">ARTEFACTO, la IA i el cinema computacional
+</h3>
+                <p class="item-info">28.04.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Projecció i debat"
+              data-modal-location="Sala Bar"
+              data-modal-desc="El cinema experimental ens permet treballar amb unes estratègies que serien absolutament inviables en el context de les grans (o no tan grans) produccions. El fet que puguem prescindir de grans equips humans i complexos equipaments redimensiona el procés creatiu a una altra escala: la càmera deixa de ser un intrús tecnològic i es converteix en una extensió del nostre propi ull. El/la cineasta solitari/ària es torna invisible i la seva atenció, alliberada de formalismes, és capaç de focalitzar-se en el més minúscul dels accidents protagonista de la quotidianitat. Aquesta proximitat guanyada ens permet submergir-nos en espais domèstics, marginals o profundament personals, i retornar-nos el poder original del cinematògraf: la capacitat de sorprendre’s davant del món i de guardar, per sempre, la llum d’un moment que mai no es tornarà a repetir.">
+              <div class="inst-img-container">
+                <img src="media/act-essers-volatils.jpg" alt="Activitat Dimarts 5">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Éssers volàtils, paisatges efímers</h3>
+                <p class="item-info">12.05.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Projecció i debat"
+              data-modal-location="Sala Bar"
+              data-modal-desc="En aquesta sessió es presenta una selecció de videocreacions destacades de projectes de mapatge arquitectural realitzats per Kònic Thtr & Lab, acompanyada d’una presentació comentada a càrrec de Rosa Sánchez, que convida el públic a apropar-se als processos, els conceptes i els contextos de les obres.
+Kònic Thtr & Lab ha desenvolupat diversos projectes de videomapatge arquitectural que exploren l’edifici i l’espai urbà com a suports narratius. Aquestes intervencions audiovisuals transformen façanes i estructures arquitectòniques en superfícies dinàmiques de projecció, integrant so, imatge, dades i sistemes digitals. Els projectes de mapatge de Kònic proposen noves formes de relació entre arquitectura, memòria, tecnologia i comunitat, i situen la pràctica del videomapatge en una exploració crítica de la memòria de l’edifici i del seu context sociocultural, més enllà de la dimensió purament espectacular.
+ ">
+              <div class="inst-img-container">
+                <img src="media/act-Konic.jpeg" alt="Activitat Dimarts 6">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Kònic Thtr & Lab - Arquitectures de píxels i memòria</h3>
+                <p class="item-info">26.05.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Projecció i debat"
+              data-modal-location="Sala Bar"
+              data-modal-desc="Acumulació de gestos, de la sèrie Trinomis de la forma, proposa un diàleg entre dues peces històriques de l’Arxiu 94-20 i una peça contemporània de curta durada produïda per l’Observatori. Aquesta triple relació funciona com un node de recontextualització i reconsideració: busca recuperar significats conservats en un dels arxius del projecte, posar-los en escena des del present i obrir noves interpretacions, alhora que estimula la producció actual de l’Observatori i reforça la seva dimensió com a projecte d’autor.">
+              <div class="inst-img-container">
+                <img src="media/act-acumulacio.jpg" alt="Activitat Dimarts 7">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Acumulació de gestos</h3>
+                <p class="item-info">09.06.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Projecció i debat"
+              data-modal-location="Sala Bar"
+              data-modal-desc="Presentació de l’itinerari fílmic “La revolució a Síria i el seu cinema”, a càrrec del cineasta, productor, curador i fundador de WindCinema Ahmad el-Haj i col·loqui posterior a la projecció d'On the Edge of Live, I Saw a Film, de Razan Hassan.
+
+I si la mort només fos el principi? Al caire de l’oblit, una jove supervivent de la guerra es troba a la vora d’un gratacel imponent, dividida entre la vida i l’abisme desconegut que hi ha a sota. Mentre salta, la realitat es trenca i, en comptes de caure, s’enlaira. La seva immersió es transforma en un vol surrealista a través d’una ciutat amarada d’ombres i llums, on cada carrer xiuxiueja secrets de l’existència.">
+              <div class="inst-img-container">
+                <img src="media/act-revolucio.jpg" alt="Activitat Dimarts 8">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">La revolució a Síria i el seu cinema
+</h3>
+                <p class="item-info">23.06.2026 19h</p>
+              </div>
+            </div>
+
+          </div><!-- /inst-grid-dimarts -->
+        </div><!-- /acts-viewport-dimarts -->
+        <div class="activities-pagination" id="pagination-dimarts">
+          <span class="page-num active" data-index="0">1</span>
+          <span class="page-num" data-index="1">2</span>
+          <span class="page-num" data-index="2">3</span>
+          <span class="page-num" data-index="3">4</span>
+          <span class="page-num" data-index="4">5</span>
+          <span class="page-num" data-index="5">6</span>
+          <span class="page-num" data-index="6">7</span>
+          <span class="page-num" data-index="7">8</span>
+        </div>
+      </div><!-- /panel-dimarts -->
+
+      <!-- ── PANEL: DIMECRES DE SO I COS ───────────────────────────────── -->
+      <div class="acts-panel" id="panel-dimecres">
+        <div class="carousel-viewport" id="acts-viewport-dimecres">
+          <div class="inst-grid-activities sm-stagger" id="inst-grid-dimecres">
+
+            <div class="inst-item"
+              data-modal-type="Performance i taller"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="Africa Moment presenta una sessió performativa inspirada en l’obra L’Expat, del coreògraf Salim Mzé Hamadi.
+L’Expat és una proposta escènica que combina teatre i dansa per qüestionar el concepte de expatriat i les seves implicacions postcolonials. Inspirada en l’assaig L’Expat des relations humaines, de Salim Mzé Hamadi Moissi, l’obra narra la història d’un home que s’enfronta al repte de l’expatriació, a les seves trobades i a la confrontació amb la pròpia cultura d’origen.
+Amb humor, dansa i teatre, L’Expat posa el focus en el privilegi, la identitat i la pertinença per evidenciar les contradiccions del discurs occidental sobre la migració. A través d’una dramatúrgia viva i autobiogràfica, l’artista reflexiona sobre el desplaçament, la tornada i la recerca d’arrels, transformant el text en moviment i cos.">
+              <div class="inst-img-container">
+                <img src="media/act-expat.jpg" alt="Bang Bang Stefi!">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">L’Expat, de Salim Mzé Hamadi
+</h3>
+                <p class="item-info">03.03.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Conversa i debat"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="El Retorn / Desig és una narració experimental construïda a través de paisatges sonors i visuals poètics, música i imatges de la quotidianitat expandida, que exploren els sentiments d’una persona. Si estàs gairebé esgotada després d’un esforç extrem i sents que formes part d’una roda que gira des de fa massa temps, és possible escapar-ne per aterrar en un jardí d’exuberància secreta? Pots reformular la teva memòria perquè el teu cor es torni a omplir de vida i desig?
+Es tracta d’una experiència sensorial que investiga la resiliència i l’esperança que evoca la Barcelona transgressora i els oasis humans que encara hi sobreviuen.">
+              <div class="inst-img-container">
+                <img src="media/act-retorn.png" alt="Entre cineastes">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">El Retorn / Desig</h3>
+                <p class="item-info">10.02.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Performance i taller"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="Raquel Castro (violí) i Amparo Lacruz (violoncel), components de Camera Aperta, interpretaran Castell interior, de Pēteris Vasks, i Rejoice!, de Sofia Gubaidúlina, composicions que porten la relació entre so i cos a un pla místic.
+Linda Bello, instructora de yin-ioga, convidarà els oients a adoptar postures de meditació còmodes i relaxants, que els descobriran el seu espai interior com a ressonància de l’experiència musical, vehicle de contemplació.">
+              <div class="inst-img-container">
+                <img src="media/act-rejoice.jpg" alt="Activitat Dimecres 3">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Rejoice! Vibra en quietud
+</h3>
+                <p class="item-info">21.04.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Performance i taller"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="Ternari és un directe en solitari en què Vitu Valera construeix una experiència audiovisual que va des de la calma fins a la intensitat dels ritmes cíclics i de la Terra.
+A través de seqüències d’àudio en directe, instrumentació tocada en viu i visuals sincronitzats, el xou proposa una escolta atenta i una connexió corporal subtil.
+Vitu activa diferents instruments i capes sonores en temps real per donar lloc a un format d’experimentació entre el ball i l’escolta.">
+              <div class="inst-img-container">
+                <img src="media/act-Vitu-Valera.jpg" alt="Activitat Dimecres 4">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Ternari</h3>
+                <p class="item-info">07.04.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Performance i taller"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="Proposta d’escolta en temps real que situa el cos i l’electrònica en un mateix espai i moment de creació. A partir de sintetitzadors analògics, arts sonores, veu i dispositius que exploren la relació entre cos i tecnologia, els artistes construeixen un paisatge sonor viu, fràgil i canviant. La peça es desplega com un procés obert en què matèria sonora i presència corporal es troben i es modifiquen mútuament, convidant el públic a habitar una experiència d’atenció, proximitat i escolta profunda.">
+              <div class="inst-img-container">
+                <img src="media/act-body.jpg" alt="Activitat Dimecres 5">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Body Signals</h3>
+                <p class="item-info">05.05.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Performance i taller"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="Un moviment que genera formes efímeres, fràgils i mutables; que neix de l’escolta com a motor creatiu i com a mecanisme de transformació del que succeeix, i que es desplega a partir de consignes obertes i pràctiques que transiten entre el quotidià i l’abstracció, entre la repetició i la variació, entre la individualitat i la composició col·lectiva. Els cossos escolten, responen i construeixen un llenguatge compartit que s’escriu en temps real, en una polifonia de presències, ritmes i veus.">
+              <div class="inst-img-container">
+                <img src="media/act-Polifonies-del-cos.JPG" alt="Activitat Dimecres 6">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Polifonies del cos</h3>
+                <p class="item-info">19.05.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Performance i taller"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="En aquest concert Sarah Claman presenta el seu projecte per a violí elèctric i pedals d’efectes, un viatge sonor construït en temps real. A partir de composicions originals, explora les possibilitats del violí més enllà del seu so tradicional creant capes, textures i paisatges electrònics en directe. Cada peça neix del diàleg entre l’instrument, la tecnologia i la improvisació, i això fa que cada interpretació sigui única i irrepetible.
+En aquesta ocasió, el projecte comptarà també amb la col·laboració especial de Seb Vidal al baix elèctric, que afegeix profunditat i noves dimensions rítmiques a una proposta íntima i immersiva.">
+              <div class="inst-img-container">
+                <img src="media/act-sarah.jpg" alt="Activitat Dimecres 7">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Sarah Claman: violí elèctric</h3>
+                <p class="item-info">02.06.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Performance i taller"
+              data-modal-location="Espai Mòniques"
+              data-modal-desc="Zitzània és un duet que combina l’elegància del circ amb la fluïdesa de la dansa, centrant-se en la fisicalitat i la diferència. A través de la manipulació dels cossos, explora com dues presències contrastades poden interactuar i complementar-se. Com la zitzània, una planta que creix entre el blat amb la seva pròpia bellesa i singularitat, els artistes investiguen què significa habitar l’espai de l’altre, un territori fràgil i poc habitual que esdevé el punt de partida creatiu.
+Aquesta peça és el resultat d’una connexió forjada al llarg dels anys entre Lali Ayguadé i Joan Ramon Graell. Després d’haver creat duets junts en la seva joventut, ara tornen a col·laborar, motivats per una amistat profunda i el desig d’explorar possibilitats noves des de les seves experiències artístiques i personals. Aquesta reunió esdevé una oportunitat per reinventar-se i redescobrir-se en un llenguatge escènic que barreja circ, dansa i la complicitat d’un vincle compartit.
+">
+              <div class="inst-img-container">
+                <img src="media/act-ziz.jpg" alt="Activitat Dimecres 8">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Zitzània</h3>
+                <p class="item-info">16.06.2026 19h</p>
+              </div>
+            </div>
+
+          </div><!-- /inst-grid-dimecres -->
+        </div><!-- /acts-viewport-dimecres -->
+        <div class="activities-pagination" id="pagination-dimecres">
+          <span class="page-num active" data-index="0">1</span>
+          <span class="page-num" data-index="1">2</span>
+          <span class="page-num" data-index="2">3</span>
+          <span class="page-num" data-index="3">4</span>
+          <span class="page-num" data-index="4">5</span>
+          <span class="page-num" data-index="5">6</span>
+          <span class="page-num" data-index="6">7</span>
+          <span class="page-num" data-index="7">8</span>
+        </div>
+      </div><!-- /panel-dimecres -->
+
+      <!-- ── PANEL: DIJOUS DE VEU I PARAULA ────────────────────────────── -->
+      <div class="acts-panel" id="panel-dijous">
+        <div class="carousel-viewport" id="acts-viewport-dijous">
+          <div class="inst-grid-activities sm-stagger" id="inst-grid-dijous">
+
+            <div class="inst-item"
+              data-modal-type="Conferència i demostració"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="Batre és la trobada entre la música i la paraula. Un duet que, des del joc entre guitarra, contrabaix i veu, explora l’emoció del dir i del cantar. Amb arrels en el cant de batre i altres formes de transmissió oral vinculades al treball i a la terra, cada espectacle connecta amb el ritme del cos i la paraula, i trasllada aquesta memòria col·lectiva a un llenguatge escènic viu i contemporani.">
+              <div class="inst-img-container">
+                <img src="media/act-isma.jpg" alt="Fran Gas">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Batre. Cantar per treballar, cantar per resistir</h3>
+                <p class="item-info">24.02.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Lectura i performance"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="Quantes obres de teatre negre has vist l'últim mes? I en el darrer any? El teatre negre té una realitat pròpia a Catalunya, o encara és una pràctica emergent, gairebé invisible?
+Aquesta conversa proposa obrir un espai de diàleg al voltant de les experiències, les genealogies i les urgències de les creadores afrodescendents a les arts escèniques.
+Ens preguntarem per les característiques, necessitats i, sobretot, per la necessitat mateixa del teatre negre: la potència política, la capacitat de generar comunitat i de transformar els imaginaris d'una societat que encara mira des d'un sol lloc.">
+              <div class="inst-img-container">
+                <img src="media/act-teatre-negre.png" alt="Acumulació de gestos">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Teatre negre i/o català?</h3>
+                <p class="item-info">17.02.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Lectura i debat"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="Neil Sabatés i Paula S. Piedad uneixen veus en un recital de poesia que és, alhora, invocació i travessia. Dos poetes amb una gran capacitat rapsòdica que fan de la paraula dita un cos viu, vibrant, capaç de sostenir el silenci i d’esquinçar-lo. La seva poesia no es limita a ser escoltada: s’encarna, ressona i sacseja.
+El recital recorrerà territoris diversos i profunds: el dol que pesa i transforma, l’amor que il·lumina i fereix, el desig que crema sota la pell, i la distància que separa cossos, temps i memòries. Amb ritme, intensitat i una presència escènica poderosa, Sabatés i Piedad conviden el públic a endinsar-se en una experiència poètica en què l’emoció i la paraula caminen juntes, sense xarxa, fins al límit.">
+              <div class="inst-img-container">
+                <img src="media/act-sense-xarxa.jpg" alt="Activitat Dijous 3">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Sense xarxa</h3>
+                <p class="item-info">08.04.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Lectura i debat"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="Els records es presenten en forma d’imatges. A poc a poc neix la conformació del relat. Les paraules s’assenten, les imatges cobren dimensió i, finalment, apareix en si el testimoniatge.
+El nostre motor creatiu és impulsat per la transgressió dels llindars de representació: a través de la proposta escènica s’explora la musicalitat de les paraules i la veu com a elements que confereixen ritme i vida al testimoni oral, mentre que el gest esdevé la partitura que dona moviment i expressivitat a la memòria.
+">
+              <div class="inst-img-container">
+                <img src="media/act-testimonis.png" alt="Activitat Dijous 4">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Testimonis reals a escena</h3>
+                <p class="item-info">22.04.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Lectura i debat"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="Tòrax, thorax és una lectura performativa d’Eulàlia Rovira, amb la col·laboració d’Anna Fontanet, que parteix d’un encreuament estrany: la presència d’un nadó —un cos prelingüístic i preerigit— davant dels vestigis romans que encarnen un llegat de domini, jerarquia i separació.
+En aquesta trobada, la peça observa com el llenguatge vacil·la davant d’un cos que encara no sap res de les estructures del pensament occidental ni de les lògiques que exclouen; un cos que ha sortit d’un altre cos i que encara viu pensant que són la mateixa cosa, o que potser no hi ha allò que en diem pell i que ens separa, ni un nom qu">
+              <div class="inst-img-container">
+                <img src="media/act-torax.png" alt="Activitat Dijous 5">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Tòrax, thorax</h3>
+                <p class="item-info">06.05.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Lectura i debat"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="Veus Lliures és un col·lectiu format per 13 dones cantants improvisadores conduïdes per Celeste Alías i dedicades a la recerca i la creació a través de la veu i del so.
+Treballen amb els límits, les textures i les possibilitats expressives de la veu, fent-ne matèria sonora viva i col·lectiva. 
+Per a aquesta proposta, dins el cicle “Dijous de veu i paraula” del Santa Mònica, i en el marc de la Setmana de la Dona, el grup ret homenatge a les dones del dadaisme, poetes i creadores que van desafiar els límits del llenguatge i del cos.
+Inspirades per figures com Emmy Hennings, Mina Loy, Hannah Höch o Elsa von Freytag- Loringhoven, les veus de Veus Lliures s’entrellacen per fer emergir una poesia sense paraules: sons, respiracions i textures que evoquen l’esperit transgressor, lúdic i radical d’aquelles dones que van convertir el no-sentit en expressió, el soroll en art i la llibertat en acte creatiu. ">
+              <div class="inst-img-container">
+                <img src="media/act-veus.jpeg" alt="Activitat Dijous 6">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Veus Lliures - Veus dadàs</h3>
+                <p class="item-info">20.05.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Lectura i debat"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="Molsa, brins, plomissols, branquillons d’un niu a mig fer... Com si escriure fos aixecar una cabana. A partir de textos publicats i inèdits, Sebastià Perelló i Adrià Targa faran això, alçar un refugi i gosar poder mirar de cara el fred que fa a fora, a la intempèrie.
+Activitat programada per Blanca Llum Vidal
+Adrià Targa (Tarragona, 1987). Ha publicat poesia i ha guanyat premis com el Gabriel Ferrater de Sant Cugat, el Vicent Andrés Estellés de Burjassot o els Jocs Florals de Barcelona. Les seves últimes obres publicades han estat Canviar de cel, Acròpolis i Arnau, aquesta darrera una novel·la en vers. Treballa de professor i viu al Raval, a">
+              <div class="inst-img-container">
+                <img src="media/act-cervol.jpg" alt="Activitat Dijous 7">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">On els mots rellisquen, la veu fora de lloc</h3>
+                <p class="item-info">03.06.2026 19h</p>
+              </div>
+            </div>
+
+            <div class="inst-item"
+              data-modal-type="Lectura i debat"
+              data-modal-location="Sala d'actes"
+              data-modal-desc="És un espectacle poètic creat a sis mans i tres caps. Un paisatge canviant que defuig les etiquetes i les banderes. Un clam a la vida als marges.
+És complicitat entre la paraula i els instruments. I també mirada crítica. 
+És una àrea de joc, un espai sonor obert i indòmit on les diversions, les distorsions i les perversions de la paraula conversen i es retroalimenten amb la música.
+És irreproduïble en format de CD.
+A Dialèctrica els agrada el directe i hi aposten!">
+              <div class="inst-img-container">
+                <img src="media/act-Xarnera-t.png" alt="Activitat Dijous 8">
+              </div>
+              <div class="inst-text-content">
+                <h3 class="item-name">Xarnera’t. Un espectacle d'alta atenció</h3>
+                <p class="item-info">17.06.2026 19h</p>
+              </div>
+            </div>
+
+          </div><!-- /inst-grid-dijous -->
+        </div><!-- /acts-viewport-dijous -->
+        <div class="activities-pagination" id="pagination-dijous">
+          <span class="page-num active" data-index="0">1</span>
+          <span class="page-num" data-index="1">2</span>
+          <span class="page-num" data-index="2">3</span>
+          <span class="page-num" data-index="3">4</span>
+          <span class="page-num" data-index="4">5</span>
+          <span class="page-num" data-index="5">6</span>
+          <span class="page-num" data-index="6">7</span>
+          <span class="page-num" data-index="7">8</span>
+        </div>
+      </div><!-- /panel-dijous -->
+
+    </section><!-- /activities-section -->
+
+
+    <!-- ================================================================
+         EXPOSICIONS
+         ================================================================ -->
+    <section class="exhibitions-section sm-reveal">
+      <div class="exhibitions-header">
+        <h2 class="activities-title">Exposicions</h2>
+        <div class="expo-search-wrap">
+          <label for="expo-search-input" aria-label="Cercar exposicions">
+            <svg class="expo-search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </label>
+          <input
+            type="text"
+            id="expo-search-input"
+            class="expo-search-input"
+            placeholder="Cerca per títol…"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Cercar exposicions per títol"
+          >
+        </div>
+      </div>
+
+      <!-- RESULTATS BUSCADOR (s'activa quan es cerca) -->
+      <div id="expo-search-results" class="expo-search-results" aria-live="polite" aria-label="Resultats de la cerca"></div>
+
+      <!-- DESKTOP / TABLET: carousel editorial 4-panells -->
+      <div class="expo-desktop-carousel-wrap">
+        <div id="expo-desktop-viewport">
+          <div id="expo-desktop-track">
+
+            <!-- Pàgina 1 -->
+            <div class="exhibitions-grid sm-stagger expo-desktop-page" id="expo-desktop-grid">
+
+              <a href="exp-xiuxiueigs.html" class="expo-item expo-left" style="text-decoration:none;color:inherit;cursor:pointer;">
+                <div class="expo-img-container">
+                  <img src="media/xiuxiueigs.png" alt="Xiuxiueigs, Bullici i Paradoxes">
+                </div>
+                <div class="expo-text">
+                  <h3 class="item-name">Xiuxiueigs, Bullici i Paradoxes</h3>
+                  <p class="item-info">12.11.2025 - 01.02.2026</p>
+                </div>
+              </a>
+
+              <div class="expo-right-container">
+                <div class="expo-item expo-top">
+                  <div class="expo-img-container">
+                    <img src="media/citissium.png" alt="Citissimum Altissimum Fortissimum">
+                  </div>
+                  <div class="expo-text">
+                    <h3 class="item-name">CITISSIMUM ALTISSIMUM FORTISSIMUM</h3>
+                    <p class="item-info">28.04.2025 - 14.09.2025</p>
+                  </div>
+                </div>
+
+                <div class="expo-bottom-row">
+                  <div class="expo-item expo-small border-right">
+                    <div class="expo-img-container">
+                      <img src="media/dsp-del-vendeval.png" alt="Després del vendaval">
+                    </div>
+                    <div class="expo-text">
+                      <h3 class="item-name">Després del vendaval</h3>
+                      <p class="item-info">02.10.2024 - 12.01.2025</p>
+                    </div>
+                  </div>
+                  <div class="expo-item expo-small">
+                    <div class="expo-img-container">
+                      <img src="media/maquines-temps.png" alt="Màquines del temps">
+                    </div>
+                    <div class="expo-text">
+                      <h3 class="item-name">Màquines del temps</h3>
+                      <p class="item-info">27.06.2024 - 08.09.2024</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /pàgina 1 -->
+
+            <!-- Pàgina 2 -->
+            <div class="exhibitions-grid sm-stagger expo-desktop-page">
+
+              <div class="expo-item expo-left">
+                <div class="expo-img-container">
+                  <img src="media/exp-dimonis.jpg" alt="Màquines del temps">
+                </div>
+                <div class="expo-text">
+                  <h3 class="item-name">Dimonis</h3>
+                  <p class="item-info">27.06.2024 - 08.09.2024</p>
+                </div>
+              </div>
+
+              <div class="expo-right-container">
+                <div class="expo-item expo-top">
+                  <div class="expo-img-container">
+                    <img src="media/exp-nua.jpg" alt="Després del vendaval">
+                  </div>
+                  <div class="expo-text">
+                    <h3 class="item-name">La nua vida</h3>
+                    <p class="item-info">02.10.2024 - 12.01.2025</p>
+                  </div>
+                </div>
+
+                <div class="expo-bottom-row">
+                  <div class="expo-item expo-small border-right">
+                    <div class="expo-img-container">
+                      <img src="media/exp-flux.jpg" alt="Citissimum Altissimum Fortissimum">
+                    </div>
+                    <div class="expo-text">
+                      <h3 class="item-name">FLUX 2019. Festival de vídeo d’autor</h3>
+                      <p class="item-info">28.04.2025 - 14.09.2025</p>
+                    </div>
+                  </div>
+                  <div class="expo-item expo-small">
+                    <div class="expo-img-container">
+                      <img src="media/exp-imatges.jpg" alt="Xiuxiueigs, Bullici i Paradoxes">
+                    </div>
+                    <div class="expo-text">
+                      <h3 class="item-name">Les imatges eco</h3>
+                      <p class="item-info">12.11.2025 - 01.02.2026</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /pàgina 2 -->
+
+          </div><!-- /expo-desktop-track -->
+        </div><!-- /expo-desktop-viewport -->
+
+        <div class="activities-pagination" id="pagination-expo-desktop">
+          <span class="page-num active" data-index="0">1</span>
+          <span class="page-num" data-index="1">2</span>
+        </div>
+
+      </div><!-- /expo-desktop-carousel-wrap -->
+
+      <!-- MOBILE: carousel pla (1 expo cada vegada) -->
+      <!-- Per afegir exposicions: duplica un .expo-card-mobile i canvia img/text -->
+      <div class="expo-mobile-carousel" id="expo-mobile-carousel">
+        <div class="expo-carousel-viewport-mobile" id="expo-mobile-viewport">
+          <div class="expo-carousel-track-mobile" id="expo-mobile-track">
+
+            <div class="expo-card-mobile">
+              <a href="exp-xiuxiueigs.html" style="text-decoration:none;color:inherit;display:block;">
+                <div class="expo-img-container">
+                  <img src="media/xiuxiueigs.png" alt="Xiuxiueigs, Bullici i Paradoxes">
+                </div>
+                <div class="expo-text">
+                  <h3 class="item-name">Xiuxiueigs, Bullici i Paradoxes</h3>
+                  <p class="item-info">12.11.2025 - 01.02.2026</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="expo-card-mobile">
+              <div class="expo-img-container">
+                <img src="media/citissium.png" alt="Citissimum Altissimum Fortissimum">
+              </div>
+              <div class="expo-text">
+                <h3 class="item-name">CITISSIMUM ALTISSIMUM FORTISSIMUM</h3>
+                <p class="item-info">28.04.2025 - 14.09.2025</p>
+              </div>
+            </div>
+
+            <div class="expo-card-mobile">
+              <div class="expo-img-container">
+                <img src="media/dsp-del-vendeval.png" alt="Després del vendaval">
+              </div>
+              <div class="expo-text">
+                <h3 class="item-name">Després del vendaval</h3>
+                <p class="item-info">02.10.2024 - 12.01.2025</p>
+              </div>
+            </div>
+
+            <div class="expo-card-mobile">
+              <div class="expo-img-container">
+                <img src="media/maquines-temps.png" alt="Màquines del temps">
+              </div>
+              <div class="expo-text">
+                <h3 class="item-name">Màquines del temps</h3>
+                <p class="item-info">27.06.2024 - 08.09.2024</p>
+              </div>
+            </div>
+
+            <!-- Cards 5–8 (pàgina 2 desktop) -->
+            <div class="expo-card-mobile">
+              <div class="expo-img-container">
+                <img src="media/exp-dimonis.jpg" alt="Màquines del temps">
+              </div>
+              <div class="expo-text">
+                <h3 class="item-name">Dimonis</h3>
+                <p class="item-info">27.06.2024 - 08.09.2024</p>
+              </div>
+            </div>
+
+            <div class="expo-card-mobile">
+              <div class="expo-img-container">
+                <img src="media/exp-nua.jpg" alt="Després del vendaval">
+              </div>
+              <div class="expo-text">
+                <h3 class="item-name">La nua vida</h3>
+                <p class="item-info">02.10.2024 - 12.01.2025</p>
+              </div>
+            </div>
+
+            <div class="expo-card-mobile">
+              <div class="expo-img-container">
+                <img src="media/exp-flux.jpg" alt="Citissimum Altissimum Fortissimum">
+              </div>
+              <div class="expo-text">
+                <h3 class="item-name">FLUX 2019. Festival de vídeo d’autor</h3>
+                <p class="item-info">28.04.2025 - 14.09.2025</p>
+              </div>
+            </div>
+
+            <div class="expo-card-mobile">
+              <div class="expo-img-container">
+                <img src="media/exp-imatges.jpg" alt="xiuxiueigs, Bullici i Paradoxes">
+              </div>
+              <div class="expo-text">
+                <h3 class="item-name">Les imatges eco</h3>
+                <p class="item-info">12.11.2025 - 01.02.2026</p>
+              </div>
+            </div>
+
+          </div><!-- /expo-mobile-track -->
+        </div><!-- /expo-mobile-viewport -->
+
+        <div class="activities-pagination" id="pagination-expo-mobile">
+          <span class="page-num active" data-index="0">1</span>
+          <span class="page-num" data-index="1">2</span>
+          <span class="page-num" data-index="2">3</span>
+          <span class="page-num" data-index="3">4</span>
+          <span class="page-num" data-index="4">5</span>
+          <span class="page-num" data-index="5">6</span>
+          <span class="page-num" data-index="6">7</span>
+          <span class="page-num" data-index="7">8</span>
+        </div>
+      </div><!-- /expo-mobile-carousel -->
+
+    </section><!-- /exhibitions-section -->
+
+  </main>
+
+  <!-- ================================================================
+       MODAL ACTIVITAT
+       Estructura: overlay > panel (img-col | content-col)
+       JS llegeix data-modal-* dels .inst-item per omplir el contingut
+       ================================================================ -->
+  <div class="act-modal-overlay" id="act-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="act-modal">
+
+      <!-- Columna esquerra: imatge full-bleed -->
+      <div class="act-modal-img-col">
+        <img class="act-modal-img" id="act-modal-img" src="" alt="">
+      </div>
+
+      <!-- Columna dreta: contingut scrollable -->
+      <div class="act-modal-content">
+
+        <div class="act-modal-progress-bar">
+          <div class="act-modal-progress-fill" id="act-modal-progress"></div>
+        </div>
+
+        <button class="act-modal-close" id="act-modal-close" aria-label="Tancar modal">×</button>
+
+        <div class="act-modal-inner" id="act-modal-inner">
+
+          <h2 class="act-modal-title" id="act-modal-title"></h2>
+
+          <div class="act-modal-meta">
+            <div class="act-modal-meta-row">
+              <span class="act-modal-meta-label">Data i horari</span>
+              <span class="act-modal-meta-value" id="act-modal-date"></span>
+            </div>
+            <div class="act-modal-meta-row">
+              <span class="act-modal-meta-label">Tipus d'activitat</span>
+              <span class="act-modal-meta-value" id="act-modal-type"></span>
+            </div>
+            <div class="act-modal-meta-row">
+              <span class="act-modal-meta-label">Ubicació</span>
+              <span class="act-modal-meta-value" id="act-modal-loc"></span>
+            </div>
+          </div>
+
+          <div class="act-modal-desc-wrap">
+            <p class="act-modal-desc" id="act-modal-desc"></p>
+            <div class="act-modal-desc-fade" id="act-modal-desc-fade"></div>
+          </div>
+
+          <div class="act-modal-form-section">
+            <span class="act-modal-form-label">Inscripció</span>
+
+            <form id="act-modal-form">
+              <input type="text"  class="act-modal-field" placeholder="Nom complet"       required>
+              <input type="email" class="act-modal-field" placeholder="Adreça electrònica" required>
+              <div class="act-modal-counter-row">
+                <span class="act-modal-counter-label">Nombre d'entrades</span>
+                <div class="act-modal-counter">
+                  <button type="button" class="act-modal-counter-btn" id="act-modal-minus">−</button>
+                  <span class="act-modal-counter-num" id="act-modal-count">1</span>
+                  <button type="button" class="act-modal-counter-btn" id="act-modal-plus">+</button>
+                </div>
+              </div>
+              <button type="submit" class="act-modal-cta">Inscriure's</button>
+            </form>
+
+            <!-- Feedback confirmació — s'activa en enviar el formulari -->
+            <div class="act-modal-confirm" id="act-modal-confirm">
+              <div class="act-modal-confirm-icon">✓</div>
+              <h3 class="act-modal-confirm-title">Inscripció confirmada</h3>
+              <p class="act-modal-confirm-text">Les teves entrades i tota la informació de l'activitat t'arribaran al correu electrònic en breu.</p>
+            </div>
+
+          </div>
+
+        </div><!-- /act-modal-inner -->
+      </div><!-- /act-modal-content -->
+    </div><!-- /act-modal -->
+  </div><!-- /act-modal-overlay -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-col col-logo">
+          <img src="media/LOGOTIP_SM_negatiu.png" alt="Santa Mònica" class="footer-brand">
+        </div>
+        <div class="footer-col">
+          <a href="santa-monica.html" class="footer-title">Uneix-te al Santa Mònica</a>
+          <p class="footer-text">
+            Vols programar, exposar, actuar, col·laborar, treballar o fer pràctiques amb nosaltres? T'expliquem com fer-ho.
+          </p>
+        </div>
+        <div class="footer-col">
+          <a href="#" class="footer-title">Preguntes freqüents</a>
+          <p class="footer-text">
+            Consulta les preguntes més habituals i troba la resposta que busques.
+          </p>
+        </div>
+        <div class="footer-col footer-links">
+          <a href="#">Premsa</a>
+          <a href="#">Convocatòries</a>
+          <a href="#">Transparència</a>
+          <a href="accessibilitat.html">Accessibilitat</a>
+          <a href="index.html#contactForm">Contacte</a>
+        </div>
+        <div class="footer-col col-social">
+          <span class="footer-label-social">Segueix-nos</span>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/centredartssantamonica?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+              <img src="media/icons/Instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/centredartssantamonica/">
+              <img src="media/icons/Facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/@centredartssantamonica/videos">
+              <img src="media/icons/Youtube.svg" alt="Youtube">
+            </a>
+            <a href="https://open.spotify.com/show/2XfPIAbiKjf5RLUIC010Aw?si=94f9bc2fd46b4761">
+              <img src="media/icons/spotify.svg" alt="Spotify">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <img src="media/logos/generalitat.svg" alt="Generalitat de Catalunya" class="logo-gencat">
+        </div>
+        <div class="footer-bottom-right">
+          <div class="legal-links">
+            <a href="avis-legal.html">Avís legal</a>
+            <a href="accessibilitat.html">Accessibilitat web</a>
+            <a href="politica-galetes.html">Política de galetes</a>
+          </div>
+          <p class="copyright">© 2026 Centre d'Arts Santa Mònica | Tots els drets reservats.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/exp-act.js"></script>
+</body>
+</html>
